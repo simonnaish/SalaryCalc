@@ -14,7 +14,8 @@
         <mat-checkbox [(ngModel)]=dataToAnalize>Let us analize your data to better optimize our applications for user.
             <br><i>All datas wil be analize anonimously.</i>
         </mat-checkbox>
-        <mat-checkbox [(ngModel)]=dataToShare>Allow us to share your data with others to support our company.</mat-checkbox>
+        <mat-checkbox [(ngModel)]=dataToShare>Allow us to share your data with others to support our company.
+        </mat-checkbox>
     </div>
     <div class=buttons>
         <button id=returnButton mat-flat-button>RETURN</button>
@@ -26,19 +27,21 @@
     <div class=friendsAccount>
         <mat-list>
             <mat-label>This people can already check your statistics.</mat-label>
-            <br><cdk-virtual-scroll-viewport itemSize=allowedFriends.lenght>
-            <div *cdkVirtualFor="let person of allowedFriends"><button (click)=deleteFromFriends(person) >DELETE</button>{{person}}</div>
-        </cdk-virtual-scroll-viewport>
+            <br>
+            <cdk-virtual-scroll-viewport itemSize=allowedFriends.lenght>
+                <div *cdkVirtualFor="let person of allowedFriends"><button
+                        (click)=deleteFromFriends(person)>DELETE</button>{{person}}</div>
+            </cdk-virtual-scroll-viewport>
         </mat-list>
-        <div>
+        <div class=addFriend>
             <mat-label>Add another friend by email</mat-label>
-        <input #emailInput matInput type="email" placeholder="CrazyFrog@gmail.com">
-        <button (click)="addToFriends(emailInput.value)">Add</button>
+            <input #emailInput matInput type="email" placeholder="CrazyFrog@gmail.com">
+            <button (click)="addToFriends(emailInput.value)">Add</button>
         </div>
 
 
     </div>
 
-    
+
 
 </body>

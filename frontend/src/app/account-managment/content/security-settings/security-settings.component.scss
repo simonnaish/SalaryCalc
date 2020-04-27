@@ -1,10 +1,11 @@
 body{
+    overflow-y: auto;
+    min-height: 70vh !important;
 
     @media only screen and (max-width:550px){
         min-height: auto !important;
         min-width: auto !important;
         max-height: max-content;
-        overflow-y: visible;
         padding-bottom: 90px;
     }
     background: none !important;
@@ -38,6 +39,11 @@ body{
             color:white !important;
         }
     }
+    .addFriend{
+        button{
+            cursor: pointer;
+        }
+    }
         input{
             margin-left: 1rem;
             margin-right: 1rem;
@@ -56,6 +62,8 @@ body{
             display: inline;
             button{
                 background: red !important;
+                cursor: pointer;
+ 
             }
             
         }
@@ -75,6 +83,9 @@ body{
         #saveButton{
             width:60%;
             background: #f79e02 !important;
+        }
+        #saveButton:hover{
+            background: green !important;
         }
     }
 

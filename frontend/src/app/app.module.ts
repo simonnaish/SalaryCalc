@@ -22,6 +22,7 @@ import { AccountSettingsComponent } from './account-managment/content/account-se
 import { CalculationSettingsComponent } from './account-managment/content/calculation-settings/calculation-settings.component';
 import { GeneralSettingsComponent } from './account-managment/content/general-settings/general-settings.component';
 import { SecuritySettingsComponent } from './account-managment/content/security-settings/security-settings.component';
+import { ModificateDialogComponent } from './progress/modificate-dialog/modificate-dialog.component';
 
 
 
@@ -41,6 +42,7 @@ import { SecuritySettingsComponent } from './account-managment/content/security-
     CalculationSettingsComponent,
     GeneralSettingsComponent,
     SecuritySettingsComponent,
+    ModificateDialogComponent,
     
   ],
   imports: [

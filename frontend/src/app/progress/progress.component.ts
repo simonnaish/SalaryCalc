@@ -3,12 +3,26 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ModificateDialogComponent } from './modificate-dialog/modificate-dialog.component';
+
+
+export interface ProgressDay{
+  day:number;
+  date:string;
+  income:number;
+  total:number;
+  progress:number;
+}
 
 @Component({
   selector: 'app-progress',
   templateUrl: './progress.component.html',
   styleUrls: ['./progress.component.scss']
 })
+
+
+
 export class ProgressComponent implements OnInit {
 
   data = [{ 'day': 1, 'date': '20-01-2020', 'income': 12, 'total': 12, 'progress': 3 },
@@ -21,7 +35,7 @@ export class ProgressComponent implements OnInit {
   dataSource: any;
 
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.data);
@@ -32,6 +46,12 @@ export class ProgressComponent implements OnInit {
 
   goToGeneral(){
     this.router.navigateByUrl('logged')
+  }
+
+  modificateDay(element:ProgressDay){
+  this.dialog.open(ModificateDialogComponent, {
+    data:element
+  });
   }
 
 }

@@ -82,6 +82,13 @@ body {
             .securityButton {
                 background: #f79e02 !important;
             }
+            .securityButton:hover{
+                color:transparent !important;
+                background-image:url('src/assets/img/locker.jpeg') !important;
+                background-repeat: round !important;
+                background-blend-mode: color-burn;
+                background-color: green !important;
+            }
         }
         .version {
             height: 15%;

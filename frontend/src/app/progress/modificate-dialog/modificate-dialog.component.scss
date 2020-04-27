@@ -1,0 +1,57 @@
+body{
+    background-image: url("src/assets/img/dialog_background.jpg") !important;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-color: #1d6690 !important;
+
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-evenly;
+    padding:3rem;
+    min-width: min-content !important;
+    min-height: min-content !important;
+    height: 100%;
+    mat-label{
+        color:white;
+    }
+
+    input{
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        width: 10rem;
+        background-color: aliceblue;
+        opacity: 0.5;
+        color:black;
+    
+    }
+
+    .buttons{
+        margin-top:1rem;
+        justify-self: center;
+        button{
+            height: 3rem;
+            cursor: pointer;
+        }
+       #returnButton{
+            width:40%;
+            border-right: solid thin;
+        }
+        #saveButton{
+            width:60%;
+            background: #f79e02 !important;
+        }
+        #saveButton:hover{
+            background: green !important;
+            opacity: 1;
+        }
+    }
+}
+
+::ng-deep .mat-dialog-container {
+    margin:0;
+    padding:0;
+    width:30vw;
+    height: 60vh;
+    overflow: hidden;
+}
