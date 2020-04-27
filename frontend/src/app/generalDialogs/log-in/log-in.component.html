@@ -1,0 +1,16 @@
+<body>
+<!-- <div class=labelInput> -->
+<label>username</label>
+<input #usernameInput type="text">
+<!-- </div> -->
+<!-- <div class=labelInput> -->
+<label>password</label>
+<input #passwordInput type="password">
+<!-- </div> -->
+
+<div mat-dialog-actions>
+    <button class=reject_button mat-flat-button mat-dialog-close>Close</button>
+    <button class=confirm_button mat-flat-button (click)="onYesClick(usernameInput.value, passwordInput.value)">Login</button>
+</div>
+
+</body>

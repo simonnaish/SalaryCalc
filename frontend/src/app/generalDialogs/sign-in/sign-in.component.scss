@@ -1,0 +1,67 @@
+.not-checked {
+    ::ng-deep .mat-checkbox-inner-container {
+        box-shadow: 0px 0px 5px 4px #f5584c;
+    }
+}
+.checked {
+    ::ng-deep .mat-checkbox-inner-container {
+        box-shadow: none;
+    }
+}
+::ng-deep .paymentRadiosGroup {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    .paymentRadio {
+        margin: 1rem;
+    }
+}
+
+button{
+    margin:1rem;
+}
+
+.visible{
+    visibility: visible;
+}
+::ng-deep .unvisible{
+    visibility: hidden !important;
+}
+
+::ng-deep .mat-dialog-container {
+    width: 50vw;
+    max-height: 80vh;
+    overflow-y: visible;
+    @media only screen and (max-width: 550px) {
+    // margin-left: 0;
+    // margin-right: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+        width: 90vw !important;
+}
+
+    background-image: url('src/assets/img/dialog_background.jpg') !important;
+    background-color: #144562 !important;
+    background-blend-mode: hard-light;
+    h3{
+        color:black !important;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+}
+.mat-stepper-vertical{
+    // background: transparent !important;
+    color:white !important;
+    background: linear-gradient(93deg, #144562, transparent) !important;
+        
+    .mat-step-header, p, mat-label{
+        color:white !important;
+    }
+    .mat-step{
+        background-color: white;
+        background-blend-mode: lighten;
+    }
+
+}
+
+

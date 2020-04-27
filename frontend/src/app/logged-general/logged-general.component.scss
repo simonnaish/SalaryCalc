@@ -1,0 +1,71 @@
+header{
+    height: 10%;
+}
+body {
+    height: 90%;
+    background-image: url("src/assets/img/bg2.jpg") !important;
+    background-blend-mode: darken;
+    background-size: cover;
+
+    padding-top: 1rem;
+
+    h2 {
+        text-align: center;
+        font-size: 3rem;
+        line-height: 3.5rem;
+        margin: 1rem;
+        font-weight: bold;
+    }
+    .container {
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        @media only screen and (max-width: 550px) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        .actions,
+        .statistics {
+            background: repeating-radial-gradient(#1d6690, transparent 100%);
+            width: 40vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @media only screen and (max-width: 550px) {
+                width: 50vw;
+            }
+        }
+
+        .actions{
+            padding-top:1.5rem;
+            padding-bottom: 1.5rem;
+            @media only screen and (max-width: 550px) {
+            padding-top: 0;
+            padding-bottom: 0;
+            }
+
+            align-items: center;
+            button{
+                height: 30%;
+                width: 80%;
+                @media only screen and (max-width: 550px) {
+                    width: 100%;
+                    height: 33.3%;
+                    border: solid 1px purple !important;
+
+                }
+            }
+        }
+
+        .statistics{
+            mat-label{
+                color:white;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

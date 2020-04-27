@@ -1,0 +1,176 @@
+body {
+    margin: 0 !important;
+    padding: 0 3%;
+    display: flex;
+    flex-direction: row;
+    background-image: url('src/assets/img/bg2.jpg') !important;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-color:#1d6690 !important;
+    @media only screen and (max-width: 550px) {
+        padding: 0 0;
+        flex-direction: column;
+    }
+
+    button {
+        width: 10rem;
+        height: 3rem;
+        font-size: 1.2rem;
+        margin: 1rem;
+    }
+
+    .spacer {
+        // background: rebeccapurple;
+        width: 6%;
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column;
+        @media only screen and (max-width: 550px) {
+            width: 100vw;
+            height: 6%;
+            flex-direction: row;
+        }
+
+        h3 {
+            font-family: monospace;
+            font-size: 2.5rem;
+        }
+        @keyframes opacityAnimation {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @keyframes spiningX {
+            0% {
+                transform: rotateX(0deg);
+            }
+
+            100% {
+                transform: rotateX(360deg);
+            }
+        }
+        @keyframes spiningY {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+        .binarySign {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            .number1{color:#f79e02;}
+            .number2{color:rebeccapurple}
+            .number3{color:#5680e9}
+            .number4{color:white}
+            .number5{color:#6cdaee}
+            .number6{color:#5ab9ea;}
+            .number7{color: #10e7dc;}
+            
+            @media only screen and (max-width: 550px) {
+                width: 100vw;
+                flex-direction: row;
+                justify-content: space-evenly;
+                .number1 {
+                    animation: spiningY 3s infinite, opacityAnimation 3s infinite;
+                }
+                .number2 {
+                    animation: spiningY 1s infinite, opacityAnimation 1s infinite;
+                }
+                .number3 {
+                    animation: spiningY 2s infinite, opacityAnimation 2s infinite;
+                }
+                .number4 {
+                    animation: spiningY 3s infinite, opacityAnimation 3s infinite;
+                }
+                .number5 {
+                    animation: spiningY 1s infinite, opacityAnimation 1s infinite;
+                }
+                .number6 {
+                    animation: spiningY 5s infinite, opacityAnimation 5s infinite;
+                }
+                .number7 {
+                    animation: spiningY 2s infinite, opacityAnimation 2s infinite;
+                }
+            }
+            @media only screen and (min-width: 550px) {
+                .number1 {
+                    animation: spiningX 3s infinite, opacityAnimation 3s infinite;
+                }
+                .number2 {
+                    animation: spiningX 1s infinite, opacityAnimation 1s infinite;
+                }
+                .number3 {
+                    animation: spiningX 2s infinite, opacityAnimation 2s infinite;
+                }
+                .number4 {
+                    animation: spiningX 3s infinite, opacityAnimation 3s infinite;
+                }
+                .number5 {
+                    animation: spiningX 1s infinite, opacityAnimation 1s infinite;
+                }
+                .number6 {
+                    animation: spiningX 5s infinite, opacityAnimation 5s infinite;
+                }
+                .number7 {
+                    animation: spiningX 2s infinite, opacityAnimation 2s infinite;
+                }
+            }
+        }
+    }
+
+    .login,
+    .demo {
+        margin: 0 0;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        width: 40%;
+        @media only screen and (max-width: 550px) {
+            width: 96%;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 2rem;
+            color: white;
+        }
+    }
+
+    .login {
+        padding-right: 4%;
+        @media only screen and (max-width: 550px) {
+            padding-right: 2%;
+            padding-left: 2%;
+            padding-bottom: 1rem;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    }
+    .demo {
+        padding-left: 4%;
+        @media only screen and (max-width: 550px) {
+            padding-left: 2%;
+            padding-right: 2%;
+            padding-top: 1rem;
+        }
+        display: flex;
+        flex-direction: column;
+
+        button {
+            align-self: center;
+        }
+    }
+}

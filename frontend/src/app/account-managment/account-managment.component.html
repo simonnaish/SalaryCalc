@@ -1,0 +1,32 @@
+<body>
+    <button [(ngClass)]=buttonTransition class=menuButton (click)=menuButton()>.<br>.<br>.</button>
+
+    <div class=navigation [ngStyle]="{'visibility':menuVisibility}">
+        <div class=user>
+            <div class=picture>
+                <img src="./assets/img/bg.jpg"> 
+            </div>
+            <div class=details>
+                <h3>username</h3>
+                <p>Account:</p>
+            </div>
+        </div>
+        <div class=action>
+            <button class=aboutButton routerLink='about'>About</button>
+            <button class=profileButton routerLink='accountSettings'>Profile details</button>
+            <button class=calculationsButton routerLink='calculationSettings'>Calculation data</button>
+            <button class=securityButton routerLink='securitySettings'> Security</button>
+            <button class=generalButton routerLink='generalSettings'>Language and notifications</button>
+        </div>
+        <div class=version>
+            <h3>Version 1.0.0</h3>
+            <h3>Author SurfDeveloper</h3>
+        </div>
+    </div>
+
+    <div class=content>
+        <h2>Manage your account</h2>
+
+        <router-outlet></router-outlet>
+    </div>
+</body>

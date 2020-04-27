@@ -1,0 +1,106 @@
+h2 {
+    text-align: center;
+}
+
+body {
+    background-image: url("src/assets/img/bg2.jpg") !important;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-color: #1d6690 !important;
+    display: flex;
+    flex-direction: column;
+    table {
+    }
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        button {
+            width: 40vw;
+            height: 4rem;
+        }
+        .closeButton {
+            margin-left: 3vw;
+        }
+        .saveButton {
+            margin-right: 3vw;
+        }
+    }
+}
+
+::ng-deep table,
+mat-paginator,
+tr.mat-header-row.cdk-header-row.ng-star-inserted {
+    background-image: url("src/assets/img/dialog_background.jpg") !important;
+    background-color: #144562 !important;
+    background-blend-mode: color-burn !important;
+    width: 94vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    @media only screen and (max-width: 550px) {
+        width: 100vw;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+::ng-deep button.mat-sort-header-button.mat-focus-indicator {
+    background: transparent !important;
+}
+::ng-deep .mat-sort-header-arrow.ng-trigger.ng-trigger-arrowPosition,
+::ng-deep.mat-paginator-icon {
+    color: #f79e02;
+}
+::ng-deep button.mat-focus-indicator.mat-paginator-navigation-first,
+::ng-deep button.mat-focus-indicator.mat-paginator-navigation-previous,
+::ng-deep button.mat-focus-indicator.mat-paginator-navigation-next,
+::ng-deep button.mat-focus-indicator.mat-paginator-navigation-last {
+    background: rebeccapurple !important;
+}
+::ng-deep button.mat-focus-indicator.mat-paginator-navigation-first:hover,
+::ng-deep button.mat-focus-indicator.mat-paginator-navigation-previous:hover,
+::ng-deep button.mat-focus-indicator.mat-paginator-navigation-next:hover,
+::ng-deep button.mat-focus-indicator.mat-paginator-navigation-last:hover {
+    background: aliceblue !important;
+}
+
+::ng-deep .mat-paginator,
+::ng-deep .mat-select-value.ng-tns-c152-7 {
+    color: white !important;
+}
+
+::ng-deep .mat-select-arrow.ng-tns-c152-7 {
+    color: #f79e02 !important;
+}
+::ng-deep .mat-form-field-underline.ng-tns-c98-6.ng-star-inserted {
+    background: white;
+}
+
+.cdk-column-day {
+    width: 3rem;
+    @media only screen and (max-width: 550px) {
+        max-width: 2rem;
+    }
+}
+.cdk-column-date {
+    width: 7rem;
+    white-space: nowrap;
+    @media only screen and (max-width: 550px) {
+        // width: 20rem !important;
+        padding-right: 1rem;
+    }
+}
+.cdk-column-income {
+    width: 3rem;
+}
+.cdk-column-total {
+    width: 3rem;
+}
+.cdk-column-progress {
+    @media only screen and (max-width: 550px) {
+    max-width: 4rem;
+    }
+    width: 3rem;
+}
+.cdk-column-modificate {
+    width: 3rem;
+}

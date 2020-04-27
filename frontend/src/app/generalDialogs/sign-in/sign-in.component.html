@@ -1,0 +1,141 @@
+<h3>Set up your account in 2 minutes and make your life easier!</h3>
+
+
+<mat-vertical-stepper [linear]=true #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel><h2>How can I call you?</h2></ng-template>
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="i.e. crazySurfer" formControlName="usernameCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="i.e. &mdsD8W2" formControlName="passwordCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="i.e. crazySurfer@gmail.com">
+            </mat-form-field>
+            <!-- <mat-form-field> -->
+            <br>
+            <mat-label>Accept our terms.<br>You can read more about it <a href="google.com/terms"
+                    target="_blank">here</a>.</mat-label><br>
+            <mat-checkbox [(ngModel)]=termsCheckbox [ngClass]='termsCheckbox?"checked":"not-checked"'
+                formControlName="termsCtrl" required>Agree
+            </mat-checkbox>
+            <!-- </mat-form-field> -->
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form>
+            <ng-template matStepLabel><h2>When do you get pay?</h2></ng-template>
+            <mat-radio-group [(ngModel)]='paymentPeriod' name='paymentRadiosGroup' class=paymentRadiosGroup>
+                <mat-radio-button class=paymentRadio *ngFor="let period of paymentPeriodGroup" [value]="period">
+                    {{period}}
+                </mat-radio-button>
+            </mat-radio-group>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel><h2>Do you receive also basic salary?</h2></ng-template>
+        <mat-radio-group [(ngModel)]='basicSalaryRadio' #basicSalaryRadiosGroup>
+            <mat-radio-button *ngFor='let choice of trueOrFalseGroup' [value]=choice>{{choice}}</mat-radio-button>
+        </mat-radio-group>
+
+        <div [ngClass]="basicSalaryRadio=='Yes'?'visible':'unvisible'">
+            <mat-form-field>
+                <mat-label>How much is your basic salary?</mat-label>
+
+                <input type="number" matInput placeholder="3000">
+            </mat-form-field>
+            <p><i>You do not have to write currency. All datas will be proportional to amount you will input here.</i>
+            </p>
+
+        </div>
+
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel><h2>Do you want to calculate also taxes?</h2></ng-template>
+        <mat-radio-group [(ngModel)]='taxesRadio' #taxesGroup>
+            <mat-radio-button *ngFor='let choice of trueOrFalseGroup' [value]=choice>{{choice}}</mat-radio-button>
+        </mat-radio-group>
+
+        <div [ngClass]="taxesRadio=='Yes'?'visible':'unvisible'">
+            <mat-label>How much taxes do you pay?</mat-label><br>
+
+            <mat-form-field>
+                <mat-label>From 0% to 100%</mat-label>
+                <input type="number" min=0 max=100 matInput>
+            </mat-form-field>
+
+        </div>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel><h2>For what do you get comission?</h2></ng-template>
+        <mat-radio-group [(ngModel)]='paymentFor' #paymentForsGroup>
+            <mat-radio-button *ngFor='let choice of paymentForGroup' [value]=choice>{{choice}}</mat-radio-button>
+        </mat-radio-group>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel><h2>How much is your comission?</h2></ng-template>
+        <mat-radio-group [(ngModel)]='fixCommission' #fixCommissionGroup>
+            <mat-radio-button *ngFor='let choice of trueOrFalseGroup' [value]=choice>{{choice}}</mat-radio-button>
+        </mat-radio-group>
+
+        <div *ngIf="fixCommission=='Yes'">
+            <mat-label>How much is your commission?</mat-label><br>
+
+            <mat-form-field>
+                <input type="number" placeholder="20" matInput>
+            </mat-form-field>
+        </div>
+
+        <div *ngIf="fixCommission=='No'">
+            <mat-label>How many percent from income do you earn?</mat-label><br>
+
+            <mat-form-field>
+                <mat-label>From 0% to 100%</mat-label>
+                <input type="number" min=0 max=100 matInput>
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel><h2>Done</h2></ng-template>
+        <p><b>Good job!</b><p><br>
+        <p>Now you will be redirected to your profil page. <br>
+            If you want to learn more about how to keep track on your progress click <a href="#">here</a>.</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button>Save</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-vertical-stepper>
+
+<div mat-dialog-actions>
+    <button class=reject_button mat-flat-button mat-dialog-close>Close</button>
+</div>
