@@ -2,8 +2,15 @@ body {
     display: flex;
     flex-direction: row;
     width: 100vw;
+    @media only screen and(min-width:950px) {
+        overflow: visible;
+    }
+
     h2 {
         text-align: center;
+        @media only screen and(min-width:400px) {
+            margin-bottom: 0;
+        }
     }
     .menuButton {
         position: sticky;
@@ -50,6 +57,7 @@ body {
                 img {
                     width: 100%;
                     height: 100%;
+                    cursor: pointer;
                 }
             }
             .details {
@@ -63,6 +71,7 @@ body {
                 height: 20%;
                 width: 100%;
                 border: none;
+                cursor: pointer;
             }
             .aboutButton,
             .profileButton,
@@ -88,7 +97,7 @@ body {
         @media only screen and (max-width: 550px) {
             left: 0px;
         }
-        background-image: url('src/assets/img/dialog_background.jpg') !important;
+        background-image: url("src/assets/img/dialog_background.jpg") !important;
         background-color: #144562 !important;
         background-blend-mode: color-burn;
         right: 0;
@@ -96,8 +105,60 @@ body {
 }
 
 .topButton {
+    animation: buttonTopTransformation 1s 1;
+    animation-iteration-count: 1;
     transform: translateY(-80px);
 }
 .regularButton {
-    transform: none;
+    animation: buttonBottomTransformation 1s 1;
+    // transform: none;
+}
+
+@keyframes buttonTopTransformation {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-80px);
+    }
+}
+@keyframes buttonBottomTransformation {
+    0% {
+        transform: translateY(-80px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.visibleMenu {
+    @media only screen and (max-width: 550px) {
+        animation: showMenu 1s 1;
+        transform: translateX(0px);
+    }
+}
+
+.unvisibleMenu {
+    @media only screen and (max-width: 550px) {
+        animation: hideMenu 1s 1;
+        transform: translateX(-300px);
+    }
+}
+
+@keyframes hideMenu {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-300px);
+    }
+}
+
+@keyframes showMenu {
+    0% {
+        transform: translateX(-300px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
 }

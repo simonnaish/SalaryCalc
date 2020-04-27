@@ -6,7 +6,11 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom:90px !important;
+    @media only screen and (max-width: 400px){
+        padding-top: 0;
+    }
     
+
     .loginEmailPicture {
         @media only screen and(max-width: 550px){
             overflow-y: visible;
@@ -27,6 +31,8 @@ body {
             font-size: 1.2rem;
             line-height: 2rem;
             width: 50%;
+            background-color: aliceblue;
+            opacity: 0.5;
         }
         #usernameLabel {
             grid-row: 2;
@@ -54,6 +60,15 @@ body {
             grid-column: 2;
             height: 300px;
             width: 200px;
+            cursor: pointer;
+            @media only screen and (max-width: 550px){
+                height: 170px;
+                width: 140px;
+            }
+            @media only screen and (max-width: 400px){
+                height: 90px;
+                width: 80px;
+            }
         }
     }
     .newsletter{
@@ -68,6 +83,7 @@ body {
         justify-self: center;
         button{
             height: 3rem;
+            cursor: pointer;
         }
         #deleteButton{
             width: 22%;
@@ -79,6 +95,7 @@ body {
         }
         #saveButton{
             width:44%;
+            background: #f79e02 !important;
         }
     }
 }

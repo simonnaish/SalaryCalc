@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material/form-field';
-
+ 
+import {PAYMENT_FOR_GROUP, PAYMENT_RADIOS_GROUP} from 'src/app/reuseable/constants'
 
 
 @Component({
@@ -13,13 +14,13 @@ import { MatFormFieldControl } from '@angular/material/form-field';
 export class SignInComponent implements OnInit {
 
   termsCheckbox=false;
-  paymentPeriodGroup=['Daily', 'Weekly', 'Monthly', 'Yearly']
+  paymentPeriodGroup=PAYMENT_RADIOS_GROUP;
   paymentPeriod='Monthly'
   trueOrFalseGroup=['Yes','No']
   basicSalaryRadio='No'
   taxesRadio='No'
   fixCommission='Yes'
-  paymentForGroup=['Person', 'Hour', 'Lesson']
+  paymentForGroup=PAYMENT_FOR_GROUP;
   paymentFor='Hour'
 
   // basicSalaryCtrl=new FormControl('No')

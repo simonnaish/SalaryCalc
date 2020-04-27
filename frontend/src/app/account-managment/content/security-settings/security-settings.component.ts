@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecuritySettingsComponent implements OnInit {
 
+  dataToAnalize=true;
+  dataToShare=true;
+  allowedFriends=['Max', 'Pax', "Lex", "Nobody", 'Mickey Mouse', 'Hulk', 'EinKleiJegemeister', 'Superman', 'Rick', 'Morty']
+
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  deleteFromFriends(person:any){
+
+  }
+
+  addToFriends(email:string){
+
   }
 
 }

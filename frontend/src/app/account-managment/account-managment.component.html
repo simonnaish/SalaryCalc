@@ -1,7 +1,7 @@
 <body>
     <button [(ngClass)]=buttonTransition class=menuButton (click)=menuButton()>.<br>.<br>.</button>
 
-    <div class=navigation [ngStyle]="{'visibility':menuVisibility}">
+    <div class=navigation [(ngClass)]=menuTransition  [ngStyle]="{'visibility':menuVisibility}">
         <div class=user>
             <div class=picture>
                 <img src="./assets/img/bg.jpg"> 

@@ -2,10 +2,16 @@ header{
     height: 10%;
 }
 body {
-    height: 90%;
+    position: absolute;
+    top:90px;
+    left:0;
+    right: 0;
+    bottom: 90px;
+    height: 100%;
     background-image: url("src/assets/img/bg2.jpg") !important;
     background-blend-mode: darken;
     background-size: cover;
+    overflow: hidden;
 
     padding-top: 1rem;
 
@@ -15,8 +21,13 @@ body {
         line-height: 3.5rem;
         margin: 1rem;
         font-weight: bold;
+        height: 40px;
+        // margin-bottom: 10px;
     }
     .container {
+        position:absolute;
+        top:90px;
+        bottom: 190px;
         margin-left: 2rem;
         margin-right: 2rem;
 
@@ -41,6 +52,7 @@ body {
         }
 
         .actions{
+            padding-right: 1.5rem;
             padding-top:1.5rem;
             padding-bottom: 1.5rem;
             @media only screen and (max-width: 550px) {
@@ -59,9 +71,14 @@ body {
 
                 }
             }
+            ::ng-deep span.mat-button-wrapper{
+                font-size: 1.7rem !important;
+            }
         }
 
         .statistics{
+            padding-top:0.5rem;
+            padding-bottom: 3rem;
             mat-label{
                 color:white;
                 font-size: 1.2rem;

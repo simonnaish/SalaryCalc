@@ -18,6 +18,7 @@ body {
         button {
             width: 40vw;
             height: 4rem;
+            cursor: pointer;
         }
         .closeButton {
             margin-left: 3vw;
@@ -54,6 +55,7 @@ tr.mat-header-row.cdk-header-row.ng-star-inserted {
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-previous,
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-next,
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-last {
+    cursor: pointer;
     background: rebeccapurple !important;
 }
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-first:hover,
@@ -103,4 +105,8 @@ tr.mat-header-row.cdk-header-row.ng-star-inserted {
 }
 .cdk-column-modificate {
     width: 3rem;
+}
+
+#changeButton{
+    cursor: pointer;
 }

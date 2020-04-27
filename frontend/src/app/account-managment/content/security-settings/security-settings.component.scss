@@ -1,0 +1,85 @@
+body{
+
+    @media only screen and (max-width:550px){
+        min-height: auto !important;
+        min-width: auto !important;
+        max-height: max-content;
+        overflow-y: visible;
+        padding-bottom: 90px;
+    }
+    background: none !important;
+    margin-left: 2rem !important;
+    color:white;
+
+    input, mat-select{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        width: 10rem;
+        background-color: aliceblue;
+        opacity: 0.5;
+        color:black;
+    }
+
+    .passwordForm{
+
+    }
+
+    .dataSharing{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .friendsAccount{
+        margin-right: 2rem;
+        display:inline-flex;
+        mat-list{
+        mat-list-item{
+            color:white !important;
+        }
+    }
+        input{
+            margin-left: 1rem;
+            margin-right: 1rem;
+            
+        }
+        input::placeholder{
+            font-size: 1rem;
+        }
+        button{
+            margin-right: 1.5rem;
+        }
+        mat-label{
+            margin-bottom: 2rem;
+        }
+        cdk-virtual-scroll-viewport{
+            display: inline;
+            button{
+                background: red !important;
+            }
+            
+        }
+        
+    }
+    .buttons{
+        margin-top:1rem;
+        justify-self: center;
+        button{
+            height: 3rem;
+            cursor: pointer;
+        }
+       #returnButton{
+            width:28%;
+            border-right: solid thin;
+        }
+        #saveButton{
+            width:60%;
+            background: #f79e02 !important;
+        }
+    }
+
+}
+
+::ng-deep .cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper{
+    min-width: 20rem !important;
+}

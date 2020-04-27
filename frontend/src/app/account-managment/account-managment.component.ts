@@ -9,6 +9,8 @@ export class AccountManagmentComponent implements OnInit {
 
   menuVisibility='visible';
   buttonTransition='topButton'
+  menuTransition='visibleMenu';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -16,12 +18,14 @@ export class AccountManagmentComponent implements OnInit {
 
 
   menuButton(){
-    if (this.menuVisibility == 'visible'){
-      this.menuVisibility='hidden';
+    if (this.menuTransition == 'visibleMenu'){
+      // this.menuVisibility='hidden';
       this.buttonTransition='regularButton'
+      this.menuTransition='unvisibleMenu';
     }else{
-      this.menuVisibility='visible';
-      this.buttonTransition='topButton'
+      // this.menuVisibility='visible';
+      this.buttonTransition='topButton';
+      this.menuTransition='visibleMenu';
     }
   }
 

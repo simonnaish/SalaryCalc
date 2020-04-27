@@ -1,1 +1,29 @@
-<p>general-settings works!</p>
+<body>
+    <h2>Language</h2>
+    <div class=languageForm>
+        <mat-label>Change language:</mat-label>
+        <mat-select [(ngModel)]=languageSelected>
+            <mat-option *ngFor="let language of languagesSelect" value=language.id>{{language.name}}</mat-option>
+        </mat-select>
+    </div>
+
+    <h2>Reports</h2>
+<div class=reportsForm>
+<mat-form-field>
+    <mat-checkbox [(ngModel)]=salaryTime>Let me know when I can pick up my salary</mat-checkbox>
+    <div class=forgotToUpdateDiv>
+    <mat-checkbox [(ngModel)]=forgotToUpdate>Email me if I will forget to update my data for longer than</mat-checkbox>
+    <input matInput type="number" value=2> days.
+</div>
+
+    <mat-checkbox [(ngModel)]=newses>Send me newses from SurfDeveloperStudio!</mat-checkbox>
+
+</mat-form-field>
+</div>
+
+<div class=buttons>
+    <button id=returnButton mat-flat-button>RETURN</button>
+    <button id=saveButton mat-flat-button>SAVE</button>
+</div>
+
+</body>

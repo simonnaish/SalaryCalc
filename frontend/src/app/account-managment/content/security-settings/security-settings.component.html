@@ -1,1 +1,44 @@
-<p>security-settings works!</p>
+<body>
+
+    <h2>Password</h2>
+    <div class=passwordForm>
+        <mat-form-field>
+            <mat-label>Change your password: </mat-label>
+            <input matInput type="password" placeholder="Type new password.">
+        </mat-form-field>
+
+    </div>
+
+    <h2>Data sharing</h2>
+    <div class=dataSharing>
+        <mat-checkbox [(ngModel)]=dataToAnalize>Let us analize your data to better optimize our applications for user.
+            <br><i>All datas wil be analize anonimously.</i>
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]=dataToShare>Allow us to share your data with others to support our company.</mat-checkbox>
+    </div>
+    <div class=buttons>
+        <button id=returnButton mat-flat-button>RETURN</button>
+        <button id=saveButton mat-flat-button>SAVE</button>
+    </div>
+
+    <h2>Friends and employee</h2>
+    <h3>Let your friends or employes follow your progress!</h3>
+    <div class=friendsAccount>
+        <mat-list>
+            <mat-label>This people can already check your statistics.</mat-label>
+            <br><cdk-virtual-scroll-viewport itemSize=allowedFriends.lenght>
+            <div *cdkVirtualFor="let person of allowedFriends"><button (click)=deleteFromFriends(person) >DELETE</button>{{person}}</div>
+        </cdk-virtual-scroll-viewport>
+        </mat-list>
+        <div>
+            <mat-label>Add another friend by email</mat-label>
+        <input #emailInput matInput type="email" placeholder="CrazyFrog@gmail.com">
+        <button (click)="addToFriends(emailInput.value)">Add</button>
+        </div>
+
+
+    </div>
+
+    
+
+</body>

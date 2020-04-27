@@ -22,14 +22,16 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar'
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+
 
 
 // import { MatCardModule } from '@angular/material/card';
 // import { MatTabsModule } from '@angular/material/tabs';
 // import { MatSnackBarModule } from '@angular/material/snack-bar';
-// import { MatSelectModule } from '@angular/material/select';
 // import { MatBadgeModule } from '@angular/material/badge';
-// import { MatButtonToggleModule } from '@angular/material/button-toggle';
 // import { MatFormFieldControl } from '@angular/material/form-field';
 
 // import { MatDividerModule } from '@angular/material/divider';
@@ -60,13 +62,14 @@ import { MatIconModule } from '@angular/material/icon';
         MatListModule,
         MatToolbarModule,
         MatIconModule,
+        MatSelectModule,
+        MatButtonToggleModule,
+        ScrollingModule,
 
         // MatCardModule,
         // MatTabsModule,
         // MatSnackBarModule,
-        // MatSelectModule,
         // MatBadgeModule,
-        // MatButtonToggleModule,
         // MatDividerModule,
         // MatExpansionModule,
       
@@ -93,13 +96,14 @@ import { MatIconModule } from '@angular/material/icon';
         MatListModule,
         MatToolbarModule,
         MatIconModule,
-
+        MatSelectModule,
+        MatButtonToggleModule,
+        ScrollingModule,
+        
         // MatCardModule,
         // MatTabsModule,
         // MatSnackBarModule,
-        // MatSelectModule,
         // MatBadgeModule,
-        // MatButtonToggleModule,
         // MatDividerModule,
         // MatExpansionModule,
     ],
