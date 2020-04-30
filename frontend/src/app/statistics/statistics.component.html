@@ -1,1 +1,25 @@
-<p>statistics works!</p>
+<body>
+        <div class=dailyIncomeAndProgressChart>
+          <canvas baseChart
+                  [datasets]="dailyIncomeAndProgressChartData"
+                  [options]="ChartOptions"
+                  [labels]="ChartLabels"
+                  [colors]="ChartColors" 
+                  [legend]="ChartLegend"
+                  [chartType]="ChartType">
+          </canvas>
+        </div>
+
+        <div class=totalProgressAndIncomeChart>
+            <canvas baseChart
+            [datasets]="totalIncomeAndProgressChartData"
+            [options]="ChartOptions"
+            [labels]="ChartLabels"
+            [colors]="ChartColors" 
+            [legend]="ChartLegend"
+            [chartType]="ChartType">
+    </canvas>
+
+        </div>
+
+</body>

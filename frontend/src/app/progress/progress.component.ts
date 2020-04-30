@@ -7,6 +7,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { ModificateDialogComponent } from './modificate-dialog/modificate-dialog.component';
 
 
+import {DAILY_PROGRESS} from 'src/app/reuseable/constants'
+
 export interface ProgressDay{
   day:number;
   date:string;
@@ -25,8 +27,7 @@ export interface ProgressDay{
 
 export class ProgressComponent implements OnInit {
 
-  data = [{ 'day': 1, 'date': '20-01-2020', 'income': 12, 'total': 12, 'progress': 3 },
-  { 'day': 2, 'date': '20-02-2020', 'income': 15, 'total': 17, 'progress': 4 }] //TODO
+  data =DAILY_PROGRESS;
 
   @ViewChild('matSort', { static: true }) matSort: MatSort;
   @ViewChild('matPaginator', { static: true }) matPaginator: MatPaginator;

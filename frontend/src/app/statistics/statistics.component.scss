@@ -1,0 +1,17 @@
+body {
+    margin-top: 90px !important;
+    display: flex;
+    flex-direction: column;
+
+    .dailyIncomeAndProgressChart{
+        display: flex;
+        width: 100vw;
+        height: 30%;
+    }
+
+    .totalProgressAndIncomeChart{
+        display:flex;
+        width: 100vw;
+        height: 30%;
+    }
+}

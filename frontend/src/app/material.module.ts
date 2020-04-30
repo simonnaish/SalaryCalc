@@ -27,6 +27,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 
 
+import {ChartsModule} from 'ng2-charts'
+
 
 // import { MatCardModule } from '@angular/material/card';
 // import { MatTabsModule } from '@angular/material/tabs';
@@ -65,6 +67,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
         MatSelectModule,
         MatButtonToggleModule,
         ScrollingModule,
+        ChartsModule,
 
         // MatCardModule,
         // MatTabsModule,
@@ -99,6 +102,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
         MatSelectModule,
         MatButtonToggleModule,
         ScrollingModule,
+        ChartsModule,
         
         // MatCardModule,
         // MatTabsModule,
