@@ -1,11 +1,11 @@
 .not-checked {
     ::ng-deep .mat-checkbox-inner-container {
-        box-shadow: 0px 0px 5px 4px #f5584c;
+        // box-shadow: 0px 0px 5px 4px #f5584c;
     }
 }
 .checked {
     ::ng-deep .mat-checkbox-inner-container {
-        box-shadow: none;
+        // box-shadow: none;
     }
 }
 ::ng-deep .paymentRadiosGroup {
@@ -28,7 +28,10 @@ button{
     visibility: hidden !important;
 }
 
+
+
 ::ng-deep .mat-dialog-container {
+    
     width: 50vw;
     max-height: 80vh;
     overflow-y: visible;
@@ -40,26 +43,26 @@ button{
         width: 90vw !important;
 }
 
-    background-image: url('src/assets/img/dialog_background.jpg') !important;
-    background-color: #144562 !important;
-    background-blend-mode: hard-light;
+    // background-image: url('src/assets/img/dialog_background.jpg') !important;
+    // background-color: #144562 !important;
+    // background-blend-mode: hard-light;
     h3{
-        color:black !important;
+        // color:black !important;
         text-align: center;
         font-size: 1.5rem;
     }
 }
 .mat-stepper-vertical{
     // background: transparent !important;
-    color:white !important;
-    background: linear-gradient(93deg, #144562, transparent) !important;
+    // color:white !important;
+    // background: linear-gradient(93deg, #144562, transparent) !important;
         
     .mat-step-header, p, mat-label{
-        color:white !important;
+        // color:white !important;
     }
     .mat-step{
-        background-color: white;
-        background-blend-mode: lighten;
+        // background-color: white;
+        // background-blend-mode: lighten;
     }
 
 }

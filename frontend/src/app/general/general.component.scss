@@ -3,10 +3,11 @@ body {
     padding: 0 3%;
     display: flex;
     flex-direction: row;
-    background-image: url('src/assets/img/bg2.jpg') !important;
-    background-blend-mode: darken;
-    background-size: cover;
-    background-color:#1d6690 !important;
+    height: 100%;
+    // background-image: url('src/assets/img/bg2.jpg') !important;
+    // background-blend-mode: darken;
+    // background-size: cover;
+    // background-color:#1d6690 !important;
     @media only screen and (max-width: 550px) {
         padding: 0 0;
         flex-direction: column;
@@ -142,7 +143,7 @@ body {
         p {
             font-size: 1.3rem;
             line-height: 2rem;
-            color: white;
+            // color: white;
         }
     }
 

@@ -1,8 +1,8 @@
 body{
-    background-image: url("src/assets/img/dialog_background.jpg") !important;
-    background-blend-mode: darken;
-    background-size: cover;
-    background-color: #1d6690 !important;
+    // background-image: url("src/assets/img/dialog_background.jpg") !important;
+    // background-blend-mode: darken;
+    // background-size: cover;
+    // background-color: #1d6690 !important;
 
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@ body{
     min-height: min-content !important;
     height: 100%;
     mat-label{
-        color:white;
+        // color:white;
     }
 
     input{
@@ -20,15 +20,18 @@ body{
         font-size: 1.2rem;
         line-height: 2rem;
         width: 10rem;
-        background-color: aliceblue;
+        // background-color: aliceblue;
         opacity: 0.5;
-        color:black;
+        // color:black;
     
     }
 
     .buttons{
         margin-top:1rem;
         justify-self: center;
+        position: absolute;
+        bottom:1rem;
+        width: 100%;
         button{
             height: 3rem;
             cursor: pointer;
@@ -39,10 +42,10 @@ body{
         }
         #saveButton{
             width:60%;
-            background: #f79e02 !important;
+            // background: #f79e02 !important;
         }
         #saveButton:hover{
-            background: green !important;
+            // background: green !important;
             opacity: 1;
         }
     }

@@ -1,7 +1,10 @@
 body {
+    // position: absolute;
+    // margin-top: 0 !important;
     display: flex;
     flex-direction: row;
     width: 100vw;
+    height: 100%;
     @media only screen and(min-width:950px) {
         overflow: visible;
     }
@@ -13,7 +16,7 @@ body {
         }
     }
     .menuButton {
-        position: sticky;
+        position: fixed;
         z-index: 2;
         top: 100px;
         left: 5px;
@@ -21,7 +24,7 @@ body {
             display: none;
         }
         border-radius: 150%;
-        position: absolute;
+        // position: absolute;
         z-index: 2;
         top: 100px;
         left: 5px;
@@ -36,7 +39,7 @@ body {
     }
     .navigation {
         z-index: 1;
-        position: absolute;
+        position: fixed;
         left: 0px;
         top: 90px;
         width: 300px;
@@ -45,10 +48,10 @@ body {
             visibility: hidden;
         }
         bottom: 90px;
-        background: azure;
+        // background: azure;
         .user {
             height: 15%;
-            background: #23adfb;
+            // background: #23adfb;
             display: flex;
             flex-direction: row;
             .picture {
@@ -67,6 +70,10 @@ body {
         }
         .action {
             height: 70%;
+            button:focus{
+            opacity: 0.3;
+            // color: black !important;
+            }
             button {
                 height: 20%;
                 width: 100%;
@@ -80,33 +87,33 @@ body {
                 border-bottom: solid thin;
             }
             .securityButton {
-                background: #f79e02 !important;
+                // background: #f79e02 !important;
             }
             .securityButton:hover{
-                color:transparent !important;
-                background-image:url('src/assets/img/locker.jpeg') !important;
-                background-repeat: round !important;
-                background-blend-mode: color-burn;
-                background-color: green !important;
+                // color:transparent !important;
+                // background-image:url('src/assets/img/locker.jpeg') !important;
+                // background-repeat: round !important;
+                // background-blend-mode: color-burn;
+                // background-color: green !important;
             }
         }
         .version {
             height: 15%;
-            background: #23adfb;
+            // background: #23adfb;
         }
     }
     .content {
         z-index: 0;
-        position: absolute;
+        position: fixed;
         top: 90px;
         bottom: 90px;
         left: 300px;
         @media only screen and (max-width: 550px) {
             left: 0px;
         }
-        background-image: url("src/assets/img/dialog_background.jpg") !important;
-        background-color: #144562 !important;
-        background-blend-mode: color-burn;
+        // background-image: url("src/assets/img/dialog_background.jpg") !important;
+        // background-color: #144562 !important;
+        // background-blend-mode: color-burn;
         right: 0;
     }
 }

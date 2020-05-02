@@ -3,10 +3,10 @@ h2 {
 }
 
 body {
-    background-image: url("src/assets/img/bg2.jpg") !important;
-    background-blend-mode: darken;
-    background-size: cover;
-    background-color: #1d6690 !important;
+    // background-image: url("src/assets/img/bg2.jpg") !important;
+    // background-blend-mode: darken;
+    // background-size: cover;
+    // background-color: #1d6690 !important;
     display: flex;
     flex-direction: column;
     table {
@@ -25,10 +25,10 @@ body {
         }
         .saveButton {
             margin-right: 3vw;
-            background: #f79e02 !important;
+            // background: #f79e02 !important;
         }
         .saveButton:hover {
-                background: green !important;
+                // background: green !important;
             
         }
     }
@@ -37,9 +37,9 @@ body {
 ::ng-deep table,
 mat-paginator,
 tr.mat-header-row.cdk-header-row.ng-star-inserted {
-    background-image: url("src/assets/img/dialog_background.jpg") !important;
-    background-color: #144562 !important;
-    background-blend-mode: color-burn !important;
+    // background-image: url("src/assets/img/dialog_background.jpg") !important;
+    // background-color: #144562 !important;
+    // background-blend-mode: color-burn !important;
     width: 94vw;
     margin-left: 3vw;
     margin-right: 3vw;
@@ -50,36 +50,36 @@ tr.mat-header-row.cdk-header-row.ng-star-inserted {
     }
 }
 ::ng-deep button.mat-sort-header-button.mat-focus-indicator {
-    background: transparent !important;
+    // background: transparent !important;
 }
 ::ng-deep .mat-sort-header-arrow.ng-trigger.ng-trigger-arrowPosition,
 ::ng-deep.mat-paginator-icon {
-    color: #f79e02;
+    // color: #f79e02;
 }
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-first,
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-previous,
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-next,
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-last {
     cursor: pointer;
-    background: rebeccapurple !important;
+    // background: rebeccapurple !important;
 }
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-first:hover,
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-previous:hover,
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-next:hover,
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-last:hover {
-    background: aliceblue !important;
+    // background: aliceblue !important;
 }
 
 ::ng-deep .mat-paginator,
 ::ng-deep .mat-select-value.ng-tns-c152-7 {
-    color: white !important;
+    // color: white !important;
 }
 
 ::ng-deep .mat-select-arrow.ng-tns-c152-7 {
-    color: #f79e02 !important;
+    // color: #f79e02 !important;
 }
 ::ng-deep .mat-form-field-underline.ng-tns-c98-6.ng-star-inserted {
-    background: white;
+    // background: white;
 }
 
 .cdk-column-day {

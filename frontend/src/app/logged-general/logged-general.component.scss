@@ -2,15 +2,15 @@ header{
     height: 10%;
 }
 body {
-    position: absolute;
-    top:90px;
-    left:0;
-    right: 0;
-    bottom: 90px;
+    // position: absolute;
+    // top:90px;
+    // left:0;
+    // right: 0;
+    // bottom: 90px;
     height: 100%;
-    background-image: url("src/assets/img/bg2.jpg") !important;
-    background-blend-mode: darken;
-    background-size: cover;
+    // background-image: url("src/assets/img/bg2.jpg") !important;
+    // background-blend-mode: darken;
+    // background-size: cover;
     overflow: hidden;
 
     padding-top: 1rem;
@@ -41,7 +41,7 @@ body {
         justify-content: space-evenly;
         .actions,
         .statistics {
-            background: repeating-radial-gradient(#1d6690, transparent 100%);
+            // background: repeating-radial-gradient(#1d6690, transparent 100%);
             width: 40vw;
             display: flex;
             flex-direction: column;
@@ -67,7 +67,7 @@ body {
                 @media only screen and (max-width: 550px) {
                     width: 100%;
                     height: 33.3%;
-                    border: solid 1px purple !important;
+                    // border: solid 1px purple !important;
 
                 }
             }
@@ -80,8 +80,8 @@ body {
             padding-top:0.5rem;
             padding-bottom: 3rem;
             mat-label{
-                color:white;
-                font-size: 1.2rem;
+                // color:white;
+                // font-size: 1.2rem;
             }
         }
     }

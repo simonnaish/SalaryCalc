@@ -8,9 +8,9 @@ body{
         
     }
 
-    background-image: url('src/assets/img/dialog_background.jpg') !important;
-    background-color: #144562 !important;
-    background-blend-mode: color-burn;
+    // background-image: url('src/assets/img/dialog_background.jpg') !important;
+    // background-color: #144562 !important;
+    // background-blend-mode: color-burn;
     // margin:0 0 !important;
     padding-top:3rem !important;
     padding-bottom: 3rem !important;
@@ -21,7 +21,7 @@ body{
     flex-direction: column !important;
 
     label{
-        color: white;
+        // color: white;
         align-self: center;
         line-height: 2.5rem;
         font-size: 2rem;

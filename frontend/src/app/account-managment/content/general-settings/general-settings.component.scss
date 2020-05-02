@@ -3,12 +3,12 @@ body{
         min-height: auto !important;
         min-width: auto !important;
     }
-    background: none !important;
+    // background: none !important;
     margin-left: 2rem !important;
 
 
     .languageForm{
-        color:white;
+        // color:white;
         display: flex;
         flex-direction:row;
         width:80%;
@@ -17,20 +17,20 @@ body{
         line-height: 2rem;
             margin-left: 3rem;
             width: 30%;
-            background-color: aliceblue;
+            // background-color: aliceblue;
             opacity: 0.5;
         }
     }
 
     .reportsForm{
-        color: white;
+        // color: white;
         input{
             font-size: 1.2rem;
             line-height: 2rem;
             width: 3rem;
-            background-color: aliceblue;
+            // background-color: aliceblue;
             opacity: 0.5;
-            color:black;
+            // color:black;
         }
         .forgotToUpdateDiv{
             input{
@@ -46,6 +46,9 @@ body{
     .buttons{
         margin-top:1rem;
         justify-self: center;
+        position: absolute;
+        bottom:1rem;
+        width: 100%;
         button{
             height: 3rem;
             cursor: pointer;
@@ -56,10 +59,10 @@ body{
         }
         #saveButton{
             width:60%;
-            background: #f79e02 !important;
+            // background: #f79e02 !important;
         }
         #saveButton:hover{
-            background: green !important;
+            // background: green !important;
         }
     }
 

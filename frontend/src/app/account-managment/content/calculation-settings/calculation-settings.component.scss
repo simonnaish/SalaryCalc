@@ -9,7 +9,7 @@ body{
     flex-direction: column;
     padding-left: 2rem;
     mat-select, input{
-        background-color: aliceblue;
+        // background-color: aliceblue;
         opacity: 0.5;
         font-size: 1.2rem;
         line-height: 2rem;
@@ -19,7 +19,7 @@ body{
 
     }
     .basicSalaryForm{
-        color: white;
+        // color: white;
     }
     .commissionForm{
         display: flex;
@@ -37,7 +37,7 @@ body{
     .paymentForAndPeriodForm{
         display: flex;
         flex-direction: row;
-        color:white;
+        // color:white;
         .radiosGroups{
     
             margin-right: 10rem;
@@ -53,6 +53,9 @@ body{
     .buttons{
         margin-top:1rem;
         justify-self: center;
+        position: absolute;
+        bottom:1rem;
+        width: 100%;
         button{
             height: 3rem;
             cursor: pointer;
@@ -63,10 +66,10 @@ body{
         }
         #saveButton{
             width:60%;
-            background: #f79e02 !important;
+            // background: #f79e02 !important;
         }
         #saveButton:hover{
-            background: green !important;
+            // background: green !important;
         }
     }
 }

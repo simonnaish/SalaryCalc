@@ -1,25 +1,36 @@
 <body>
         <div class=dailyIncomeAndProgressChart>
-          <canvas baseChart
-                  [datasets]="dailyIncomeAndProgressChartData"
-                  [options]="ChartOptions"
-                  [labels]="ChartLabels"
-                  [colors]="ChartColors" 
-                  [legend]="ChartLegend"
-                  [chartType]="ChartType">
-          </canvas>
+                <h2>Compare daily progress</h2>
+
+                <canvas baseChart height="100%"   [datasets]="dailyIncomeAndProgressChartData"
+                        [options]="ChartOptions" [labels]="ChartLabels" [colors]="ChartColors" [legend]="ChartLegend"
+                        [chartType]="ChartType">
+                </canvas>
         </div>
 
         <div class=totalProgressAndIncomeChart>
-            <canvas baseChart
-            [datasets]="totalIncomeAndProgressChartData"
-            [options]="ChartOptions"
-            [labels]="ChartLabels"
-            [colors]="ChartColors" 
-            [legend]="ChartLegend"
-            [chartType]="ChartType">
-    </canvas>
+                <h2>Check your total progress and earnings</h2>
+                <canvas baseChart height="100%"  [datasets]="totalIncomeAndProgressChartData"
+                        [options]="ChartOptions" [labels]="ChartLabels" [colors]="ChartColors" [legend]="ChartLegend"
+                        [chartType]="ChartType">
+                </canvas>
 
         </div>
+
+        <div class=minAndMax>
+                <h2>Take a look on your records and try to beat them!</h2>
+
+                <mat-list>
+                        <mat-list-item #maxIncome>Your max income was {{maxIncome.value}} on day {{maxIncome.id}}.</mat-list-item>
+                        <mat-list-item #minIncome>Your min income was {{minIncome.value}} on day {{minIncome.id}}.</mat-list-item>
+                        <mat-list-item #maxProgress>Your max progress was {{maxProgress.value}} on day {{maxProgress.id}}.</mat-list-item>
+                        <mat-list-item #minProgress>Your min progress was {{minProgress.valule}} on day {{minProgress.id}}.</mat-list-item>
+                </mat-list>
+        </div>
+
+        <div class=buttons>
+                <button id=returnButton mat-flat-button>RETURN</button>
+            </div>
+            
 
 </body>

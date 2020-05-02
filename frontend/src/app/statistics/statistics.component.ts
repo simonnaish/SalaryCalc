@@ -43,12 +43,27 @@ export class StatisticsComponent implements OnInit {
 
   totalIncomeAndProgressChartData;
 
+
+  minIncome: {};
+  maxIncome: {};
+  minProgress:{};
+  maxProgress:{};
+
   constructor() { }
 
   ngOnInit(): void {
+    this.setUpMinMax(DAILY_PROGRESS);
+
     this.ChartLabels = this.generateLabels(DAILY_PROGRESS);
-    
+
     this.drawCharts();
+  }
+  setUpMinMax(DAILY_PROGRESS: { day: number; date: string; income: number; total: number; progress: number; }[]) {
+    let minMaxList=this.findMaxAndMin(DAILY_PROGRESS);
+    this.minIncome=minMaxList[0];
+    this.maxIncome=minMaxList[1];
+    this.minProgress=minMaxList[2];
+    this.maxProgress=minMaxList[3];
   }
 
   drawCharts() {
@@ -56,11 +71,11 @@ export class StatisticsComponent implements OnInit {
     this.dailyIncomeAndProgressChartData = [
       { data: dataPoints[0], label: "Earned" },
       { data: dataPoints[1], label: "Progress" }
-     ];
-     this.totalIncomeAndProgressChartData=[
-       {data:dataPoints[1], label:"Total earnings"},
-       {data:dataPoints[2], label:"Total progress"}
-     ]
+    ];
+    this.totalIncomeAndProgressChartData = [
+      { data: dataPoints[2], label: "Total earnings" },
+      { data: dataPoints[3], label: "Total progress" }
+    ]
   }
 
   generateLabels(list: any[]): string[] {
@@ -77,43 +92,58 @@ export class StatisticsComponent implements OnInit {
 
     let income = [];
     let progress = [];
-   
-    let earned=[];
-    let currentIncome=0;
-   
-    let totalProgress=[]
-    let currentProgress=0;
-    
+
+    let earned = [];
+    let currentIncome = 0;
+
+    let totalProgress = []
+    let currentProgress = 0;
+
     for (var el of list.keys()) {
-      currentDay=list[el].day;
+      currentDay = list[el].day;
       income.push({ label: currentDay, y: list[el].income })
       progress.push({ label: currentDay, y: list[el].progress })
-      currentIncome+=list[el].income;
-      currentProgress+=list[el].progress;
-      earned.push({label:currentDay, y: currentIncome})
-      totalProgress.push({label:currentDay.day,y:currentProgress})
+      currentIncome += list[el].income;
+      currentProgress += list[el].progress;
+      earned.push({ label: currentDay, y: currentIncome })
+      totalProgress.push({ label: currentDay.day, y: currentProgress })
 
     }
     return [income, progress, earned, totalProgress];
   }
 
-  findMaxAndMin(list: any[]): number[] {
-    let minValue: number = 9999;
-    let maxValue: number = 0;
-    let min: number;
-    let max: number;
+  findMaxAndMin(list: any[]): {}[] {
+    let incomeMinValue: number = 9999;
+    let incomeMaxValue: number = 0;
+    let incomeMin: number;
+    let incomeMax: number;
+
+    let progressMinValue: number = 9999;
+    let progressMaxValue: number = 0;
+    let progressMin: number;
+    let progressMax: number;
+
     for (let el of list.keys()) {
-      if (minValue > list[el].income) {
-        minValue = list[el].income;
-        min = el;
+      if (incomeMinValue > list[el].income) {
+        incomeMinValue = list[el].income;
+        incomeMin = el;
       }
-      if (maxValue < list[el].income) {
-        maxValue = list[el].income;
-        max = el;
+      if (incomeMaxValue < list[el].income) {
+        incomeMaxValue = list[el].income;
+        incomeMax = el;
+      }
+      if (progressMinValue > list[el].progress) {
+        progressMinValue = list[el].progress;
+        progressMin = el;
+      }
+      if (progressMaxValue < list[el].progress) {
+        progressMaxValue = list[el].progress;
+        progressMax = el;
       }
     }
-    console.log(min, max);
-    return [min, max];
+    console.log(incomeMin, incomeMax);
+    return [{ 'id': incomeMin, 'value': incomeMinValue }, { 'id': incomeMax, 'value': incomeMaxValue }, 
+    { 'id': progressMin, 'value': progressMinValue }, { 'id': progressMax, 'value': progressMaxValue }];
   }
 
 
