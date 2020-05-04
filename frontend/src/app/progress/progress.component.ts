@@ -8,6 +8,7 @@ import { ModificateDialogComponent } from './modificate-dialog/modificate-dialog
 
 
 import {DAILY_PROGRESS} from 'src/app/reuseable/constants'
+import { AppComponent } from '../app.component';
 
 export interface ProgressDay{
   day:number;
@@ -46,7 +47,7 @@ export class ProgressComponent implements OnInit {
   }
 
   goToGeneral(){
-    this.router.navigateByUrl('logged')
+    AppComponent.goTo('logged');
   }
 
   modificateDay(element:ProgressDay){

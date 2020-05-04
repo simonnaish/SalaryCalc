@@ -4,11 +4,13 @@ body{
     // background-size: cover;
     // background-color: #1d6690 !important;
 
+    background: #FAFAFA;
+
     display: flex;
     flex-direction: column;
-    // justify-content: space-evenly;
+    // // justify-content: space-evenly;
     padding:3rem;
-    min-width: min-content !important;
+    // min-width: min-content !important;
     min-height: min-content !important;
     height: 100%;
     mat-label{
@@ -29,24 +31,24 @@ body{
     .buttons{
         margin-top:1rem;
         justify-self: center;
-        position: absolute;
+        // position: absolute;
         bottom:1rem;
-        width: 100%;
+        // width: 100%;
         button{
             height: 3rem;
             cursor: pointer;
         }
-       #returnButton{
-            width:40%;
+       .returnButton{
+            // width:40%;
             border-right: solid thin;
         }
-        #saveButton{
-            width:60%;
+        .saveButton{
+            // width:60%;
             // background: #f79e02 !important;
         }
-        #saveButton:hover{
+        .saveButton:hover{
             // background: green !important;
-            opacity: 1;
+            // opacity: 1;
         }
     }
 }

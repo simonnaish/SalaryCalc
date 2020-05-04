@@ -1,14 +1,15 @@
 // $background:#C1C8E4;
-$background: #10e7dc;
+$background:#C8E6C9;//#FFD600;
+$backgroundOld: #10e7dc;
 $background2: #23adfb;
 
 $titles: #ffffff;
 $special: #f79e02;
 $special2:#f79e02;
 
-$buttons: #0074e1;
+$buttons: #009688;//#E65100;//#0074e1;
 $hoversOld: rebeccapurple; //#8860D0; 
-$hovers:#663399;
+$hovers: #80CBC4;//#FFA726;//#673AB7;
 
 $primary: #5680e9;
 $extra1: #6cdaee;
@@ -38,11 +39,14 @@ footer {
     margin: 0 auto !important;
     padding: 0;
 }
-header {
-    background: radial-gradient( #f79e02, #0074e1 301% );
+html {
+    background: $background;
+    // background: radial-gradient( #f79e02, #0074e1 301% );
+    // background: radial-gradient(#FFD600, #F57F17 300%);
 } //repeating-radial-gradient( transparent,  100%);}
 footer {
-    background: radial-gradient( #f79e02, #0074e1 301% );
+    background-blend-mode: lighten;
+    // background: radial-gradient( #f79e02, #0074e1 301% );
 }
 body {
     // background: $background2 !important;
@@ -62,7 +66,7 @@ h1 {
 
 
 button {
-    background: $buttons !important;
+    background: $buttons  !important;
     color: $titles !important;
 }
 button:hover {
@@ -75,3 +79,36 @@ font-size:16px;}
 @media only screen and (max-width:550px){
     *{font-size: 10px;
 }}
+
+
+
+//buttons
+$saveButton:#1B5E20;
+$saveButtonHover:#388E3C;
+$deleteButton:#DD2C00;
+$deleteButtonHover:#F4511E;
+$specialAction:#FF6D00;
+$specialActionHover:#FFA726;
+
+
+.saveButton{
+    background: $saveButton !important;
+}
+.saveButton:hover{
+    background: $saveButtonHover !important; 
+}
+.deleteButton{
+    background: $deleteButton !important;
+}
+.deleteButton:hover{
+background:  $deleteButtonHover !important;
+}
+.specialAction{
+    background: $specialAction !important;
+}
+.specialAction:hover{
+    background:$specialActionHover !important;
+}
+matInput{
+    background: red !important;
+}

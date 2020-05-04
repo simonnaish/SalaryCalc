@@ -42,15 +42,16 @@ body {
         position: fixed;
         left: 0px;
         top: 90px;
+        bottom:0;
         width: 300px;
         @media only screen and (max-width: 550px) {
             width: 70vw;
             visibility: hidden;
         }
-        bottom: 90px;
+        bottom: 0px;
         // background: azure;
         .user {
-            height: 15%;
+            height:90px;
             // background: #23adfb;
             display: flex;
             flex-direction: row;
@@ -64,14 +65,16 @@ body {
                 }
             }
             .details {
+                background: #B2DFDB;
                 height: 100%;
                 width: 60%;
             }
         }
         .action {
-            height: 70%;
+            height: calc(100% - 180px);
             button:focus{
-            opacity: 0.3;
+                background: #4DB6AC !important;
+            // opacity: 0.4;
             // color: black !important;
             }
             button {
@@ -98,11 +101,13 @@ body {
             }
         }
         .version {
-            height: 15%;
+            height: 90px;
+            // height: 15%;
             // background: #23adfb;
         }
     }
     .content {
+        padding-top: 5rem;
         z-index: 0;
         position: fixed;
         top: 90px;

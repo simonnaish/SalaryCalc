@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { DAILY_PROGRESS } from 'src/app/reuseable/constants'
 
-import * as Chart from 'chart.js';
-import * as CanvasJS from '../canvasjs.min.js'
+// import * as Chart from 'chart.js';
+// import * as CanvasJS from '../canvasjs.min.js'
 import { Color, Label } from 'ng2-charts';
+import { AppComponent } from '../app.component.js';
 
 @Component({
   selector: 'app-statistics',
@@ -44,10 +45,10 @@ export class StatisticsComponent implements OnInit {
   totalIncomeAndProgressChartData;
 
 
-  minIncome: {};
-  maxIncome: {};
-  minProgress:{};
-  maxProgress:{};
+  minIncome;
+  maxIncome;
+  minProgress;
+  maxProgress;
 
   constructor() { }
 
@@ -141,9 +142,14 @@ export class StatisticsComponent implements OnInit {
         progressMax = el;
       }
     }
-    console.log(incomeMin, incomeMax);
     return [{ 'id': incomeMin, 'value': incomeMinValue }, { 'id': incomeMax, 'value': incomeMaxValue }, 
     { 'id': progressMin, 'value': progressMinValue }, { 'id': progressMax, 'value': progressMaxValue }];
+  }
+
+
+  goToGeneral(){
+    // console.log('chuj')
+    AppComponent.goTo('logged');
   }
 
 

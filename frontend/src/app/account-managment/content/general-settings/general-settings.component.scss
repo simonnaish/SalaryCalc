@@ -53,17 +53,17 @@ body{
             height: 3rem;
             cursor: pointer;
         }
-       #returnButton{
+       .returnButton{
             width:28%;
             border-right: solid thin;
         }
-        #saveButton{
+        .saveButton{
             width:60%;
             // background: #f79e02 !important;
         }
-        #saveButton:hover{
+        // #saveButton:hover{
             // background: green !important;
-        }
+        // }
     }
 
 }

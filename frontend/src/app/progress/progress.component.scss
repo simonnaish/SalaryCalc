@@ -36,10 +36,11 @@ body {
 
 ::ng-deep table,
 mat-paginator,
-tr.mat-header-row.cdk-header-row.ng-star-inserted {
+tr.mat-header-row.cdk-header-row.ng-star-inserted, tr.mat-row.cdk-row.ng-star-inserted {
     // background-image: url("src/assets/img/dialog_background.jpg") !important;
     // background-color: #144562 !important;
     // background-blend-mode: color-burn !important;
+    background: #FAFAFA ;
     width: 94vw;
     margin-left: 3vw;
     margin-right: 3vw;
@@ -50,7 +51,8 @@ tr.mat-header-row.cdk-header-row.ng-star-inserted {
     }
 }
 ::ng-deep button.mat-sort-header-button.mat-focus-indicator {
-    // background: transparent !important;
+    background: transparent !important;
+    color:black !important;
 }
 ::ng-deep .mat-sort-header-arrow.ng-trigger.ng-trigger-arrowPosition,
 ::ng-deep.mat-paginator-icon {

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { LogInComponent } from './generalDialogs/log-in/log-in.component';
 import { GeneralComponent } from './general/general.component';
-import {  Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,13 +11,24 @@ import {  Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+
 export class AppComponent {
   title = 'SalaryCalc';
+  public static _router: Router;
 
-  constructor(private router:Router){}
 
-  LogIn(){
+  constructor(private router: Router) {
+    this._router = router;
+  }
+
+  LogIn() {
     // GeneralComponent.staticLogIn();
     this.router.navigateByUrl('logged')
+  }
+
+  public static goTo(url: string) {
+    let ac = new AppComponent(this._router);
+    ac.router.navigateByUrl(url);
   }
 }

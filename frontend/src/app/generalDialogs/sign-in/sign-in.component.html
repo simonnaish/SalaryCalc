@@ -130,8 +130,8 @@
             If you want to learn more about how to keep track on your progress click <a href="#">here</a>.</p>
         <div>
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-button>Save</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-button class=saveButton>Save</button>
+            <button mat-button class=deleteButton (click)="stepper.reset()">Reset</button>
         </div>
     </mat-step>
 </mat-vertical-stepper>

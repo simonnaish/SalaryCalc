@@ -18,13 +18,14 @@ body {
     h2 {
         text-align: center;
         font-size: 3rem;
-        line-height: 3.5rem;
+        // line-height: 3.5rem;
         margin: 1rem;
         font-weight: bold;
-        height: 40px;
+        // height: 40px;
         // margin-bottom: 10px;
     }
     .container {
+        padding-top:10rem;
         position:absolute;
         top:90px;
         bottom: 190px;
@@ -32,6 +33,7 @@ body {
         margin-right: 2rem;
 
         @media only screen and (max-width: 550px) {
+            padding-top:0;
             margin-left: 0;
             margin-right: 0;
         }
@@ -42,7 +44,7 @@ body {
         .actions,
         .statistics {
             // background: repeating-radial-gradient(#1d6690, transparent 100%);
-            width: 40vw;
+            // width: 40vw;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -52,6 +54,7 @@ body {
         }
 
         .actions{
+            width: 50vw;
             padding-right: 1.5rem;
             padding-top:1.5rem;
             padding-bottom: 1.5rem;
@@ -62,12 +65,12 @@ body {
 
             align-items: center;
             button{
-                height: 30%;
-                width: 80%;
+                height: 29%;
+                width: 53%;
                 @media only screen and (max-width: 550px) {
                     width: 100%;
                     height: 33.3%;
-                    // border: solid 1px purple !important;
+                    border: solid 1px #FF6D00!important;
 
                 }
             }
@@ -77,6 +80,7 @@ body {
         }
 
         .statistics{
+            // margin-top:10rem;
             padding-top:0.5rem;
             padding-bottom: 3rem;
             mat-label{

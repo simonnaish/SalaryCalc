@@ -5,24 +5,22 @@ body {
     height: 100%;
 
     padding-left: 5% !important;
-    padding-right: 5% !important;  
-    h2{
+    padding-right: 5% !important;
+    h2 {
         text-align: center;
     }
-    .dailyIncomeAndProgressChart .totalProgressAndIncomeChart{
+    .dailyIncomeAndProgressChart .totalProgressAndIncomeChart {
         display: flex;
         flex-direction: column;
         height: 30%;
-        
-        
     }
 
-    .dailyProgressAndIncomeChart{
+    .dailyProgressAndIncomeChart {
         // margin-bottom: 10rem;
     }
-    .minAndMax{
+    .minAndMax {
         // display: grid;
-        margin-bottom: 10rem;
+        // margin-bottom: 10rem;
         // #maxIncome{
         //     grid-row: 1;
         //     grid-column: 2;
@@ -44,24 +42,26 @@ body {
         // }
     }
 
-    .buttons{
-        position: absolute;
-        bottom:2rem;
-        left:5%;
-        right:5%;
+    .buttons {
+        // position: absolute;
+        bottom: 2rem;
+        left: 5%;
+        right: 5%;
         justify-self: center;
-            button{
-                height: 3rem;
-                cursor: pointer;
-            }
-                #returnButton{
-                width:100%;
-                border-right: solid thin;
-            }
+        button {
+            height: 3rem;
+            cursor: pointer;
+        }
+        .returnButton {
+            width: 100%;
+            border-right: solid thin;
+            margin-bottom: 10rem;
 
-        @media only screen and (max-width: 550px){
-           position: absolute;
-           margin-bottom: 3rem;
         }
+
+        @media only screen and (max-width: 550px) {
+            position: absolute;
+            margin-bottom: 3rem;
         }
+    }
 }

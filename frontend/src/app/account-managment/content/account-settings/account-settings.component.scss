@@ -88,22 +88,22 @@ body {
             height: 3rem;
             cursor: pointer;
         }
-        #deleteButton{
+        .deleteButton{
             width: 22%;
             // background-color: red !important;
         }
-        #returnButton{
+        .returnButton{
             width:22%;
             border-right: solid thin;
         }
-        #saveButton{
+        .saveButton{
             width:44%;
             // background: #f79e02 !important;
         }
-        #saveButton:hover{
+        // #saveButton:hover{
             // background: green !important;
             
-        }
+        // }
     }
 }
 
