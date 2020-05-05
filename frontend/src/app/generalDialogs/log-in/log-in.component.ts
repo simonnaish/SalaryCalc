@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog'
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog'
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-log-in',
@@ -15,11 +16,17 @@ export class LogInComponent implements OnInit {
   }
 
 
-  onYesClick(username:string, password:string){
-    this.dialogRef.close(true);
+  logIn(username: string, password: string) {
+    // if (service.logIn(username, password)) {
+      this.dialogRef.close(true);
+    // } else {
+      // this.dialogRef.close(false);
+    // }
+    AppComponent.showMessage('You logged in!')
+
   }
-  onExit(){
+  onExit() {
     this.dialogRef.close(false);
   }
 
-  }
+}

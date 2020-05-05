@@ -7,7 +7,7 @@
             <ng-template matStepLabel><h2>How can I call you?</h2></ng-template>
             <mat-form-field>
                 <mat-label>Username</mat-label>
-                <input matInput placeholder="i.e. crazySurfer" formControlName="usernameCtrl" required>
+                <input #usernameInput matInput placeholder="i.e. crazySurfer" formControlName="usernameCtrl" required>
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Password</mat-label>
@@ -15,16 +15,14 @@
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Email</mat-label>
-                <input matInput type="email" placeholder="i.e. crazySurfer@gmail.com">
+                <input matInput type="email" formControlName="emailCtrl" placeholder="i.e. crazySurfer@gmail.com">
             </mat-form-field>
-            <!-- <mat-form-field> -->
             <br>
             <mat-label>Accept our terms.<br>You can read more about it <a href="google.com/terms"
                     target="_blank">here</a>.</mat-label><br>
             <mat-checkbox [(ngModel)]=termsCheckbox [ngClass]='termsCheckbox?"checked":"not-checked"'
                 formControlName="termsCtrl" required>Agree
             </mat-checkbox>
-            <!-- </mat-form-field> -->
             <div>
                 <button mat-button matStepperNext>Next</button>
             </div>
@@ -54,7 +52,7 @@
             <mat-form-field>
                 <mat-label>How much is your basic salary?</mat-label>
 
-                <input type="number" matInput placeholder="3000">
+                <input [(ngModel)]=basicSalaryAmount type="number" matInput placeholder="3000">
             </mat-form-field>
             <p><i>You do not have to write currency. All datas will be proportional to amount you will input here.</i>
             </p>
@@ -106,7 +104,7 @@
             <mat-label>How much is your commission?</mat-label><br>
 
             <mat-form-field>
-                <input type="number" placeholder="20" matInput>
+                <input [(ngModel)]=commissionAmount type="number" placeholder="20" matInput>
             </mat-form-field>
         </div>
 
@@ -115,7 +113,7 @@
 
             <mat-form-field>
                 <mat-label>From 0% to 100%</mat-label>
-                <input type="number" min=0 max=100 matInput>
+                <input [(ngModel)]=commissionPercent type="number" min=0 max=100 matInput>
             </mat-form-field>
         </div>
         <div>
@@ -130,7 +128,7 @@
             If you want to learn more about how to keep track on your progress click <a href="#">here</a>.</p>
         <div>
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-button class=saveButton>Save</button>
+            <button mat-button class=saveButton (click)='createAccount()'>Save</button>
             <button mat-button class=deleteButton (click)="stepper.reset()">Reset</button>
         </div>
     </mat-step>

@@ -24,6 +24,7 @@ import {MatToolbarModule} from '@angular/material/toolbar'
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 
 
@@ -32,7 +33,6 @@ import {ChartsModule} from 'ng2-charts'
 
 // import { MatCardModule } from '@angular/material/card';
 // import { MatTabsModule } from '@angular/material/tabs';
-// import { MatSnackBarModule } from '@angular/material/snack-bar';
 // import { MatBadgeModule } from '@angular/material/badge';
 // import { MatFormFieldControl } from '@angular/material/form-field';
 
@@ -68,10 +68,10 @@ import {ChartsModule} from 'ng2-charts'
         MatButtonToggleModule,
         ScrollingModule,
         ChartsModule,
+        MatSnackBarModule,
 
         // MatCardModule,
         // MatTabsModule,
-        // MatSnackBarModule,
         // MatBadgeModule,
         // MatDividerModule,
         // MatExpansionModule,
@@ -103,10 +103,10 @@ import {ChartsModule} from 'ng2-charts'
         MatButtonToggleModule,
         ScrollingModule,
         ChartsModule,
+        MatSnackBarModule,
         
         // MatCardModule,
         // MatTabsModule,
-        // MatSnackBarModule,
         // MatBadgeModule,
         // MatDividerModule,
         // MatExpansionModule,

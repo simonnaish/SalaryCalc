@@ -14,15 +14,15 @@ import { MaterialModule } from './material.module';
 import { LogInComponent } from './generalDialogs/log-in/log-in.component';
 import { SignInComponent } from './generalDialogs/sign-in/sign-in.component';
 import { LoggedGeneralComponent } from './logged-general/logged-general.component';
-import { ProgressComponent } from './progress/progress.component';
-import { StatisticsComponent } from './statistics/statistics.component';
-import { AccountManagmentComponent } from './account-managment/account-managment.component';
-import { AboutComponent } from './account-managment/content/about/about.component';
-import { AccountSettingsComponent } from './account-managment/content/account-settings/account-settings.component';
-import { CalculationSettingsComponent } from './account-managment/content/calculation-settings/calculation-settings.component';
-import { GeneralSettingsComponent } from './account-managment/content/general-settings/general-settings.component';
-import { SecuritySettingsComponent } from './account-managment/content/security-settings/security-settings.component';
-import { ModificateDialogComponent } from './progress/modificate-dialog/modificate-dialog.component';
+import { ProgressComponent } from './logged-general/progress/progress.component';
+import { StatisticsComponent } from './logged-general/statistics/statistics.component';
+import { AccountManagmentComponent } from './logged-general/account-managment/account-managment.component';
+import { AboutComponent } from './logged-general/account-managment/content/about/about.component';
+import { AccountSettingsComponent } from './logged-general/account-managment/content/account-settings/account-settings.component';
+import { CalculationSettingsComponent } from './logged-general/account-managment/content/calculation-settings/calculation-settings.component';
+import { GeneralSettingsComponent } from './logged-general/account-managment/content/general-settings/general-settings.component';
+import { SecuritySettingsComponent } from './logged-general/account-managment/content/security-settings/security-settings.component';
+import { ModificateDialogComponent } from './logged-general/progress/modificate-dialog/modificate-dialog.component';
 
 
 

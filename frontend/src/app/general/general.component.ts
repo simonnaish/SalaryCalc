@@ -32,12 +32,17 @@ export class GeneralComponent implements OnInit {
 
   logIn(): void {
     const dialogRef = this.dialog.open(LogInComponent);
+    dialogRef.afterClosed().subscribe(result=>{
+      if(result){
+        this.router.navigateByUrl('/logged');
+      }
+    });
   }
   signIn() {
     const dialogRef = this.dialog.open(SignInComponent);
-    dialogRef.afterClosed().subscribe((correct: boolean) => {
-      if (correct) {
-        this.router.navigateByUrl('logged');
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.router.navigateByUrl('/logged');
       }
     })
   }

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { LogInComponent } from './generalDialogs/log-in/log-in.component';
+// import { LogInComponent } from './generalDialogs/log-in/log-in.component';
 import { GeneralComponent } from './general/general.component';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -15,20 +16,20 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
   title = 'SalaryCalc';
-  public static _router: Router;
+  static _snackBar;
 
+  constructor(private router: Router, private snackBar: MatSnackBar) {
+    AppComponent._snackBar=snackBar;
+  } 
 
-  constructor(private router: Router) {
-    this._router = router;
+  static showMessage(message:string, type?:'positive' | 'negative' | 'message'){
+    this._snackBar.open(message);
   }
 
   LogIn() {
-    // GeneralComponent.staticLogIn();
-    this.router.navigateByUrl('logged')
+    GeneralComponent.staticLogIn();
+    // this.router.navigateByUrl('logged')
   }
 
-  public static goTo(url: string) {
-    let ac = new AppComponent(this._router);
-    ac.router.navigateByUrl(url);
-  }
+
 }

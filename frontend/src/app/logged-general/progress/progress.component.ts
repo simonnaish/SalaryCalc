@@ -8,14 +8,15 @@ import { ModificateDialogComponent } from './modificate-dialog/modificate-dialog
 
 
 import {DAILY_PROGRESS} from 'src/app/reuseable/constants'
-import { AppComponent } from '../app.component';
+import { AppComponent } from '../../app.component';
 
 export interface ProgressDay{
   day:number;
   date:string;
   income:number;
-  total:number;
+  totalIncome:number;
   progress:number;
+  totalProgress:number;
 }
 
 @Component({
@@ -33,7 +34,7 @@ export class ProgressComponent implements OnInit {
   @ViewChild('matSort', { static: true }) matSort: MatSort;
   @ViewChild('matPaginator', { static: true }) matPaginator: MatPaginator;
 
-  Columns: string[] = ['day', 'date', 'income', 'total', 'progress', 'modificate']
+  Columns: string[] = ['day', 'date', 'income', 'totalIncome', 'progress', 'totalProgress', 'modificate']
   dataSource: any;
 
 
@@ -46,9 +47,6 @@ export class ProgressComponent implements OnInit {
 
   }
 
-  goToGeneral(){
-    AppComponent.goTo('logged');
-  }
 
   modificateDay(element:ProgressDay){
   this.dialog.open(ModificateDialogComponent, {

@@ -6,7 +6,7 @@ import { DAILY_PROGRESS } from 'src/app/reuseable/constants'
 // import * as Chart from 'chart.js';
 // import * as CanvasJS from '../canvasjs.min.js'
 import { Color, Label } from 'ng2-charts';
-import { AppComponent } from '../app.component.js';
+import { AppComponent } from 'src/app/app.component.js';
 
 @Component({
   selector: 'app-statistics',
@@ -59,7 +59,7 @@ export class StatisticsComponent implements OnInit {
 
     this.drawCharts();
   }
-  setUpMinMax(DAILY_PROGRESS: { day: number; date: string; income: number; total: number; progress: number; }[]) {
+  setUpMinMax(DAILY_PROGRESS: { day: number; date: string; income: number; totalIncome: number; progress: number; totalProgress:number }[]) {
     let minMaxList=this.findMaxAndMin(DAILY_PROGRESS);
     this.minIncome=minMaxList[0];
     this.maxIncome=minMaxList[1];
@@ -88,7 +88,7 @@ export class StatisticsComponent implements OnInit {
   }
 
 
-  generateDataPoints(list: any[]): any[] {
+  generateDataPoints(list: any[]): {}[] {
     let currentDay;
 
     let income = [];
@@ -113,7 +113,7 @@ export class StatisticsComponent implements OnInit {
     return [income, progress, earned, totalProgress];
   }
 
-  findMaxAndMin(list: any[]): {}[] {
+  findMaxAndMin(list: any[]): any[] {
     let incomeMinValue: number = 9999;
     let incomeMaxValue: number = 0;
     let incomeMin: number;
@@ -146,11 +146,6 @@ export class StatisticsComponent implements OnInit {
     { 'id': progressMin, 'value': progressMinValue }, { 'id': progressMax, 'value': progressMaxValue }];
   }
 
-
-  goToGeneral(){
-    // console.log('chuj')
-    AppComponent.goTo('logged');
-  }
 
 
 }

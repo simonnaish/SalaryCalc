@@ -14,4 +14,12 @@ export class ModificateDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  close(){
+    this.dialogRef.close(false);
+  }
+  save(day, date, income, totalIncome, progress, totalProgress){
+    //service PATH call
+    this.dialogRef.close(true);
+  }
+
 }
