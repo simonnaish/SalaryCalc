@@ -3,10 +3,6 @@ h2 {
 }
 
 body {
-    // background-image: url("src/assets/img/bg2.jpg") !important;
-    // background-blend-mode: darken;
-    // background-size: cover;
-    // background-color: #1d6690 !important;
     display: flex;
     flex-direction: column;
     table {
@@ -16,31 +12,28 @@ body {
         flex-direction: row;
         justify-content: space-between;
         button {
-            width: 40vw;
             height: 4rem;
             cursor: pointer;
         }
         .closeButton {
+            width: 20vw;
             margin-left: 3vw;
         }
         .saveButton {
+            width: 37vw;
             margin-right: 3vw;
-            // background: #f79e02 !important;
         }
-        .saveButton:hover {
-                // background: green !important;
-            
+        .addButton {
+            width: 37vw;
         }
     }
 }
 
 ::ng-deep table,
 mat-paginator,
-tr.mat-header-row.cdk-header-row.ng-star-inserted, tr.mat-row.cdk-row.ng-star-inserted {
-    // background-image: url("src/assets/img/dialog_background.jpg") !important;
-    // background-color: #144562 !important;
-    // background-blend-mode: color-burn !important;
-    background: #FAFAFA !important;
+tr.mat-header-row.cdk-header-row.ng-star-inserted,
+tr.mat-row.cdk-row.ng-star-inserted {
+    background: #fafafa !important;
     width: 94vw;
     margin-left: 3vw;
     margin-right: 3vw;
@@ -52,38 +45,14 @@ tr.mat-header-row.cdk-header-row.ng-star-inserted, tr.mat-row.cdk-row.ng-star-in
 }
 ::ng-deep button.mat-sort-header-button.mat-focus-indicator {
     background: transparent !important;
-    color:black !important;
-}
-::ng-deep .mat-sort-header-arrow.ng-trigger.ng-trigger-arrowPosition,
-::ng-deep.mat-paginator-icon {
-    // color: #f79e02;
+    color: black !important;
 }
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-first,
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-previous,
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-next,
 ::ng-deep button.mat-focus-indicator.mat-paginator-navigation-last {
     cursor: pointer;
-    // background: rebeccapurple !important;
 }
-::ng-deep button.mat-focus-indicator.mat-paginator-navigation-first:hover,
-::ng-deep button.mat-focus-indicator.mat-paginator-navigation-previous:hover,
-::ng-deep button.mat-focus-indicator.mat-paginator-navigation-next:hover,
-::ng-deep button.mat-focus-indicator.mat-paginator-navigation-last:hover {
-    // background: aliceblue !important;
-}
-
-::ng-deep .mat-paginator,
-::ng-deep .mat-select-value.ng-tns-c152-7 {
-    // color: white !important;
-}
-
-::ng-deep .mat-select-arrow.ng-tns-c152-7 {
-    // color: #f79e02 !important;
-}
-::ng-deep .mat-form-field-underline.ng-tns-c98-6.ng-star-inserted {
-    // background: white;
-}
-
 .cdk-column-day {
     width: 3rem;
     @media only screen and (max-width: 550px) {
@@ -94,7 +63,6 @@ tr.mat-header-row.cdk-header-row.ng-star-inserted, tr.mat-row.cdk-row.ng-star-in
     width: 7rem;
     white-space: nowrap;
     @media only screen and (max-width: 550px) {
-        // width: 20rem !important;
         padding-right: 1rem;
     }
 }

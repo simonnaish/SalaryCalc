@@ -1,16 +1,8 @@
-header{
+header {
     height: 10%;
 }
 body {
-    // position: absolute;
-    // top:90px;
-    // left:0;
-    // right: 0;
-    // bottom: 90px;
     height: 100%;
-    // background-image: url("src/assets/img/bg2.jpg") !important;
-    // background-blend-mode: darken;
-    // background-size: cover;
     overflow: hidden;
 
     padding-top: 1rem;
@@ -18,22 +10,19 @@ body {
     h2 {
         text-align: center;
         font-size: 3rem;
-        // line-height: 3.5rem;
         margin: 1rem;
         font-weight: bold;
-        // height: 40px;
-        // margin-bottom: 10px;
     }
     .container {
-        padding-top:10rem;
-        position:absolute;
-        top:90px;
+        padding-top: 10rem;
+        position: absolute;
+        top: 90px;
         bottom: 190px;
         margin-left: 2rem;
         margin-right: 2rem;
 
         @media only screen and (max-width: 550px) {
-            padding-top:0;
+            padding-top: 0;
             margin-left: 0;
             margin-right: 0;
         }
@@ -43,8 +32,6 @@ body {
         justify-content: space-evenly;
         .actions,
         .statistics {
-            // background: repeating-radial-gradient(#1d6690, transparent 100%);
-            // width: 40vw;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -53,40 +40,34 @@ body {
             }
         }
 
-        .actions{
+        .actions {
             width: 50vw;
             padding-right: 1.5rem;
-            padding-top:1.5rem;
+            padding-top: 1.5rem;
             padding-bottom: 1.5rem;
             @media only screen and (max-width: 550px) {
-            padding-top: 0;
-            padding-bottom: 0;
+                padding-top: 0;
+                padding-bottom: 0;
             }
 
             align-items: center;
-            button{
+            button {
                 height: 29%;
                 width: 53%;
                 @media only screen and (max-width: 550px) {
                     width: 100%;
                     height: 33.3%;
-                    border: solid 1px #FF6D00!important;
-
+                    border: solid 1px #ff6d00 !important;
                 }
             }
-            ::ng-deep span.mat-button-wrapper{
+            ::ng-deep span.mat-button-wrapper {
                 font-size: 1.7rem !important;
             }
         }
 
-        .statistics{
-            // margin-top:10rem;
-            padding-top:0.5rem;
+        .statistics {
+            padding-top: 0.5rem;
             padding-bottom: 3rem;
-            mat-label{
-                // color:white;
-                // font-size: 1.2rem;
-            }
         }
     }
 }

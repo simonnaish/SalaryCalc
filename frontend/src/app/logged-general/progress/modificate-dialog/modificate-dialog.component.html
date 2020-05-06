@@ -1,19 +1,20 @@
 <body>
     <mat-label>Change day</mat-label>
-    <input matInput type="number" [value]=data.day>
+    <input #dayInput matInput type="number" [value]=data.record.day>
     <mat-label>Change date</mat-label>
-    <input matInput type="text" [value]=data.date>
+    <input disabled #dateInput matInput type="text" [value]=data.record.date>
     <mat-label>Change income</mat-label>
-    <input matInput type="number" [value]=data.income>
+    <input #incomeInput matInput type="number" [value]=data.record.income>
     <mat-label>Change total amount</mat-label>
-    <input matInput type="number" [value]=data.totalIncome>
+    <input #totalIncomeInput matInput type="number" [value]=data.record.totalIncome>
     <mat-label>Change progress</mat-label>
-    <input matInput type="number" [value]=data.progress>
+    <input #progressInput matInput type="number" [value]=data.record.progress>
     <mat-label>Change total progress</mat-label>
-    <input matInput type="number" [value]=data.totalProgress>
+    <input #totalProgressInput matInput type="number" [value]=data.record.totalProgress>
 
     <div class=buttons>
-        <a routerLink='/logged'> <button class=returnButton mat-flat-button>RETURN</button></a>
-        <button class=saveButton mat-flat-button>SAVE</button>
+        <button class=returnButton (click)=return() mat-flat-button>RETURN</button>
+        <button *ngIf="data.new!=true" mat-flat-button class=deleteButton (click)=deleteRecord()>DELETE</button>
+        <button class=saveButton (click)='saveRecord(dayInput.value, dateInput.value, incomeInput.value, totalIncomeInput.value, progressInput.value, totalProgressInput.value)' mat-flat-button>SAVE</button>
     </div>
 </body>

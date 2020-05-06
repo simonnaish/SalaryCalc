@@ -4,10 +4,7 @@ body {
     display: flex;
     flex-direction: row;
     height: 100%;
-    // background-image: url('src/assets/img/bg2.jpg') !important;
-    // background-blend-mode: darken;
-    // background-size: cover;
-    // background-color:#1d6690 !important;
+ 
     @media only screen and (max-width: 550px) {
         padding: 0 0;
         flex-direction: column;
@@ -21,7 +18,6 @@ body {
     }
 
     .spacer {
-        // background: rebeccapurple;
         width: 6%;
         margin: 0 !important;
         display: flex;
@@ -70,14 +66,28 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
-            .number1{color:#f79e02;}
-            .number2{color:rebeccapurple}
-            .number3{color:#5680e9}
-            .number4{color:white}
-            .number5{color:#6cdaee}
-            .number6{color:#5ab9ea;}
-            .number7{color: #10e7dc;}
-            
+            .number1 {
+                color: #f79e02;
+            }
+            .number2 {
+                color: rebeccapurple;
+            }
+            .number3 {
+                color: #5680e9;
+            }
+            .number4 {
+                color: white;
+            }
+            .number5 {
+                color: #6cdaee;
+            }
+            .number6 {
+                color: #5ab9ea;
+            }
+            .number7 {
+                color: #10e7dc;
+            }
+
             @media only screen and (max-width: 550px) {
                 width: 100vw;
                 flex-direction: row;
@@ -143,7 +153,6 @@ body {
         p {
             font-size: 1.3rem;
             line-height: 2rem;
-            // color: white;
         }
     }
 
@@ -172,6 +181,27 @@ body {
 
         button {
             align-self: center;
+        }
+        button:hover {
+            background: #009688 !important;
+        }
+
+        opacity: 0.3;
+        //comming soon
+    }
+    .commingSoon {
+        opacity: 1;
+        color: goldenrod;
+        transform: skew(-53deg, 26deg);
+        font-size: 5rem;
+        line-height: 6rem;
+        position: absolute;
+        top: calc(100vh - 82%);
+        left: calc(100vw / 2 + 8%);
+
+        @media only screen and (max-width: 550px) {
+            top: calc(100vh - 57%);
+            left: calc(100vw / 2 - 29%);
         }
     }
 }

@@ -1,0 +1,17 @@
+.container{
+    background: #FAFAFA;
+    padding: 2rem 4rem;
+
+    h2{
+        text-align: center;
+    }
+    .buttons{
+        display: flex;
+        justify-content: center;
+    }
+}
+::ng-deep .mat-dialog-container {
+min-width: unset !important;
+min-height: unset !important;
+padding:0;
+}

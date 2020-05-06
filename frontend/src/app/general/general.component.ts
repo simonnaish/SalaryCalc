@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog/';
 
-import { LogInComponent } from '../generalDialogs/log-in/log-in.component'
-import { SignInComponent } from '../generalDialogs/sign-in/sign-in.component';
+import { LogInComponent } from './generalDialogs/log-in/log-in.component'
+import { SignInComponent } from './generalDialogs/sign-in/sign-in.component';
 import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-general',
@@ -14,11 +15,9 @@ import { Router } from '@angular/router';
 export class GeneralComponent implements OnInit {
 
   static _dialog: MatDialog;
-  static _router: Router;
 
   constructor(public dialog: MatDialog, private router: Router) {
     GeneralComponent._dialog = dialog;
-    GeneralComponent._router = router;
   }
 
 
@@ -26,8 +25,13 @@ export class GeneralComponent implements OnInit {
   }
 
   static staticLogIn() {
-    let generalComponent = new GeneralComponent(this._dialog, this._router);
+    let generalComponent = new GeneralComponent(this._dialog, AppComponent._router);
     generalComponent.logIn();
+  }
+
+  static logOut(){
+    let generalComponent=new GeneralComponent(this._dialog, AppComponent._router);
+    generalComponent.logOut();
   }
 
   logIn(): void {
@@ -45,6 +49,10 @@ export class GeneralComponent implements OnInit {
         this.router.navigateByUrl('/logged');
       }
     })
+  }
+
+  logOut(){
+    
   }
 
 

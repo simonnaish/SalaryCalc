@@ -2,17 +2,15 @@ body {
     padding: 3rem;
     min-height: 10vh !important;
     min-width: 10vw !important;
-    // background: none !important;
     display: flex;
     flex-direction: column;
-    margin-bottom:90px !important;
-    @media only screen and (max-width: 400px){
+    margin-bottom: 90px !important;
+    @media only screen and (max-width: 400px) {
         padding-top: 0;
     }
-    
 
     .loginEmailPicture {
-        @media only screen and(max-width: 550px){
+        @media only screen and(max-width: 550px) {
             overflow-y: visible;
             display: flex;
             flex-direction: column;
@@ -20,9 +18,6 @@ body {
         display: grid;
         column-gap: 0;
         row-gap: 0;
-        // display: flex;
-        // flex-direction: column;
-        // color: white;
         font-size: 1.5rem;
         line-height: 2rem;
         margin-top: 2rem;
@@ -31,7 +26,6 @@ body {
             font-size: 1.2rem;
             line-height: 2rem;
             width: 50%;
-            // background-color: aliceblue;
             opacity: 0.5;
         }
         #usernameLabel {
@@ -61,59 +55,45 @@ body {
             height: 300px;
             width: 200px;
             cursor: pointer;
-            @media only screen and (max-width: 550px){
+            @media only screen and (max-width: 550px) {
                 height: 170px;
                 width: 140px;
             }
-            @media only screen and (max-width: 400px){
+            @media only screen and (max-width: 400px) {
                 height: 90px;
                 width: 80px;
             }
         }
     }
-    .newsletter{
-        margin-top:2rem;
+    .newsletter {
+        margin-top: 2rem;
         display: inline-flex;
-        #newsletterLabel {
-        }
-        #newsletterCheckbox {
-        }
     }
-    .buttons{
+    .buttons {
         justify-self: center;
         position: absolute;
-        bottom:1rem;
+        bottom: 1rem;
         width: 100%;
-        button{
+        button {
             height: 3rem;
             cursor: pointer;
         }
-        .deleteButton{
+        .deleteButton {
             width: 22%;
-            // background-color: red !important;
         }
-        .returnButton{
-            width:22%;
+        .returnButton {
+            width: 22%;
             border-right: solid thin;
         }
-        .saveButton{
-            width:44%;
-            // background: #f79e02 !important;
+        .saveButton {
+            width: 44%;
         }
-        // #saveButton:hover{
-            // background: green !important;
-            
-        // }
     }
 }
 
 ::ng-deep mat-label#newsletterLabel {
     font-size: 1.5rem;
     line-height: 2rem;
-    // color: white !important;
-}
-::ng-deep .mat-checkbox-frame {
-    // border-color: white;
 }
 ::ng-deep .mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin {
     margin-left: 1rem;

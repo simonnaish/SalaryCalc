@@ -1,106 +1,82 @@
-body{
+body {
     overflow-y: auto;
     min-height: 70vh !important;
 
-    @media only screen and (max-width:550px){
+    @media only screen and (max-width: 550px) {
         min-height: auto !important;
         min-width: auto !important;
         max-height: max-content;
         padding-bottom: 90px;
     }
-    // background: none !important;
     margin-left: 2rem !important;
-    // color:white;
 
-    input, mat-select{
+    input,
+    mat-select {
         font-size: 1.2rem;
         line-height: 2rem;
         width: 10rem;
-        // background-color: aliceblue;
         opacity: 0.5;
-        // color:black;
     }
 
-    .passwordForm{
-
+    .passwordForm {
     }
 
-    .dataSharing{
+    .dataSharing {
         display: flex;
         flex-direction: column;
-
     }
 
-    .friendsAccount{
+    .friendsAccount {
         margin-right: 2rem;
-        display:inline-flex;
-        mat-list{
-        mat-list-item{
-            // color:white !important;
-        }
+        display: inline-flex;
     }
-    .addFriend{
-        button{
+    .addFriend {
+        button {
             cursor: pointer;
         }
     }
-        input{
-            margin-left: 1rem;
-            margin-right: 1rem;
-            
-        }
-        input::placeholder{
-            font-size: 1rem;
-        }
-        button{
-            margin-right: 1.5rem;
-        }
-        mat-label{
-            margin-bottom: 2rem;
-        }
-        cdk-virtual-scroll-viewport{
-            display: inline;
-            // padding-bottom: 7rem;
-            button{
-                // background: red !important;
-                cursor: pointer;
- 
-            }
-            
-        }
-        
-        
+    input {
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
-    .buttons{
-        margin-top:1rem;
-        justify-self: center;
-        position: absolute;
-        bottom:1rem;
-        width: 100%;
-        button{
-            height: 3rem;
+    input::placeholder {
+        font-size: 1rem;
+    }
+    button {
+        margin-right: 1.5rem;
+    }
+    mat-label {
+        margin-bottom: 2rem;
+    }
+    cdk-virtual-scroll-viewport {
+        display: inline;
+        button {
             cursor: pointer;
         }
-       .returnButton{
-            width:28%;
-            // border-right: solid thin;
-        }
-        .saveButton{
-            width:60%;
-            // background: #f79e02 !important;
-        }
-        .saveButton:hover{
-            // background: green !important;
-        }
     }
-
+}
+.buttons {
+    margin-top: 1rem;
+    justify-self: center;
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    button {
+        height: 3rem;
+        cursor: pointer;
+    }
+    .returnButton {
+        width: 28%;
+    }
+    .saveButton {
+        width: 60%;
+    }
 }
 
-::ng-deep .cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper{
+::ng-deep .cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper {
     min-width: 20rem !important;
 }
 
-::ng-deep .cdk-virtual-scroll-content-wrapper{
-
+::ng-deep .cdk-virtual-scroll-content-wrapper {
     margin-bottom: 7rem;
-   }
+}

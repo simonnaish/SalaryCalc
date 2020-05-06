@@ -1,27 +1,21 @@
-body{
-    // background:transparent !important;
-p{
-    text-justify: newspaper;
-    // color:white;
-}
-a{
-    // color:skyblue;
-}
+body {
+    p {
+        text-justify: newspaper;
+    }
 
-.buttons{
-position: absolute;
-bottom:1rem;
-left:5%;
-right: 5%;
-width: 90%;
-justify-self: center;
-    button{
-        height: 3rem;
-        cursor: pointer;
+    .buttons {
+        position: absolute;
+        bottom: 1rem;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        justify-self: center;
+        button {
+            height: 3rem;
+            cursor: pointer;
+        }
+        .returnButton {
+            width: 100%;
+        }
     }
-        .returnButton{
-        width:100%;
-        // border-right: solid thin;
-    }
-}
 }

@@ -1,6 +1,4 @@
 body {
-    // position: absolute;
-    // margin-top: 0 !important;
     display: flex;
     flex-direction: row;
     width: 100vw;
@@ -24,15 +22,12 @@ body {
             display: none;
         }
         border-radius: 150%;
-        // position: absolute;
         z-index: 2;
         top: 100px;
         left: 5px;
         font-size: 3rem;
         line-height: 0.8rem;
-        /* height: 3rem; */
         width: 3rem;
-        /* margin-top: 0; */
         padding: 5px 5px;
         text-align: center;
         -webkit-text-security: disc;
@@ -42,17 +37,15 @@ body {
         position: fixed;
         left: 0px;
         top: 90px;
-        bottom:0;
+        bottom: 0;
         width: 300px;
         @media only screen and (max-width: 550px) {
             width: 70vw;
             visibility: hidden;
         }
         bottom: 0px;
-        // background: azure;
         .user {
-            height:90px;
-            // background: #23adfb;
+            height: 90px;
             display: flex;
             flex-direction: row;
             .picture {
@@ -65,17 +58,15 @@ body {
                 }
             }
             .details {
-                background: #B2DFDB;
+                background: #b2dfdb;
                 height: 100%;
                 width: 60%;
             }
         }
         .action {
             height: calc(100% - 180px);
-            button:focus{
-                background: #4DB6AC !important;
-            // opacity: 0.4;
-            // color: black !important;
+            button:focus {
+                background: #4db6ac !important;
             }
             button {
                 height: 20%;
@@ -89,21 +80,9 @@ body {
             .securityButton {
                 border-bottom: solid thin;
             }
-            .securityButton {
-                // background: #f79e02 !important;
-            }
-            .securityButton:hover{
-                // color:transparent !important;
-                // background-image:url('src/assets/img/locker.jpeg') !important;
-                // background-repeat: round !important;
-                // background-blend-mode: color-burn;
-                // background-color: green !important;
-            }
         }
         .version {
             height: 90px;
-            // height: 15%;
-            // background: #23adfb;
         }
     }
     .content {
@@ -116,9 +95,7 @@ body {
         @media only screen and (max-width: 550px) {
             left: 0px;
         }
-        // background-image: url("src/assets/img/dialog_background.jpg") !important;
-        // background-color: #144562 !important;
-        // background-blend-mode: color-burn;
+
         right: 0;
     }
 }
@@ -130,7 +107,6 @@ body {
 }
 .regularButton {
     animation: buttonBottomTransformation 1s 1;
-    // transform: none;
 }
 
 @keyframes buttonTopTransformation {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {LANGUAGES_SELECT} from 'src/app/reuseable/constants'
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-general-settings',
@@ -19,6 +20,10 @@ export class GeneralSettingsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  saveChanges(){
+    AppComponent.showMessage('Changes saved.', 'positive');
   }
 
   //TODO Push Notifications

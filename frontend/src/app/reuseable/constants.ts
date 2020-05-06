@@ -12,14 +12,3 @@ export const DAILY_PROGRESS= [{ 'day': 1, 'date': '20-01-2020', 'income': 17, 't
 {'day':5,'date':'12-01-2020','income':18,'totalIncome':58,'progress':3, 'totalProgress':15},
 {'day':6,'date':'2-03-2020','income':12,'totalIncome':70,'progress':2, 'totalProgress':17}] //TODO
 
-function getSnackBarDetails(type:string):{color:string, icon:string}{
-    let details:{color:string, icon:string}
-    if(type=='positive'){
-
-    }else if(type=='negative'){
-
-    }else{
-
-    }
-    return details;
-}

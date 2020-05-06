@@ -19,7 +19,7 @@
     </div>
     <div class=buttons>
         <a routerLink='/logged'> <button class=returnButton mat-flat-button>RETURN</button></a>
-        <button class=saveButton mat-flat-button>SAVE</button>
+        <button class=saveButton (click)=saveChanges() mat-flat-button>SAVE</button>
     </div>
 
     <h2>Friends and employee</h2>
@@ -29,14 +29,14 @@
             <mat-label>This people can already check your statistics.</mat-label>
             <br>
             <cdk-virtual-scroll-viewport itemSize=allowedFriends.lenght>
-                <div *cdkVirtualFor="let person of allowedFriends"><button
+                <div *cdkVirtualFor="let person of allowedFriends"><button class=deleteButton
                         (click)=deleteFromFriends(person)>DELETE</button>{{person}}</div>
             </cdk-virtual-scroll-viewport>
         </mat-list>
         <div class=addFriend>
             <mat-label>Add another friend by email</mat-label>
             <input #emailInput matInput type="email" placeholder="CrazyFrog@gmail.com">
-            <button (click)="addToFriends(emailInput.value)">Add</button>
+            <button mat-flat-button class=saveButton (click)="addToFriends(emailInput.value)">Add</button>
         </div>
 
 

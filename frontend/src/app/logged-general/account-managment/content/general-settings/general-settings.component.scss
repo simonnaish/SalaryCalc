@@ -1,69 +1,56 @@
-body{
-    @media only screen and (max-width:550px){
+body {
+    @media only screen and (max-width: 550px) {
         min-height: auto !important;
         min-width: auto !important;
     }
-    // background: none !important;
     margin-left: 2rem !important;
 
-
-    .languageForm{
-        // color:white;
+    .languageForm {
         display: flex;
-        flex-direction:row;
-        width:80%;
-        mat-select{
+        flex-direction: row;
+        width: 80%;
+        mat-select {
             font-size: 1.2rem;
-        line-height: 2rem;
+            line-height: 2rem;
             margin-left: 3rem;
             width: 30%;
-            // background-color: aliceblue;
             opacity: 0.5;
         }
     }
 
-    .reportsForm{
-        // color: white;
-        input{
+    .reportsForm {
+        input {
             font-size: 1.2rem;
             line-height: 2rem;
             width: 3rem;
-            // background-color: aliceblue;
             opacity: 0.5;
-            // color:black;
         }
-        .forgotToUpdateDiv{
-            input{
+        .forgotToUpdateDiv {
+            input {
                 text-align: center;
                 margin-left: 1rem;
                 margin-right: 1rem;
             }
             display: inline-flex;
         }
-    
     }
 
-    .buttons{
-        margin-top:1rem;
+    .buttons {
+        margin-top: 1rem;
         justify-self: center;
         position: absolute;
-        bottom:1rem;
+        bottom: 1rem;
         width: 100%;
-        button{
+        button {
             height: 3rem;
             cursor: pointer;
         }
-       .returnButton{
-            width:28%;
+        .returnButton {
+            width: 28%;
             border-right: solid thin;
         }
-        .saveButton{
-            width:60%;
-            // background: #f79e02 !important;
+        .saveButton {
+            width: 60%;
         }
-        // #saveButton:hover{
-            // background: green !important;
-        // }
     }
-
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {CURRENCIES, PAYMENT_FOR_GROUP, PAYMENT_RADIOS_GROUP} from 'src/app/reuseable/constants'
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-calculation-settings',
@@ -34,6 +35,10 @@ export class CalculationSettingsComponent implements OnInit {
     }else{
       this.basicSalaryForm ='unvisible'
     }
+  }
+
+  saveChanges(){
+    AppComponent.showMessage('Changes saved.', 'positive');
   }
 
 }

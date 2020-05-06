@@ -1,62 +1,41 @@
-body{
-    // background-image: url("src/assets/img/dialog_background.jpg") !important;
-    // background-blend-mode: darken;
-    // background-size: cover;
-    // background-color: #1d6690 !important;
-
-    background: #FAFAFA !important;
-
+body {
+    background: #fafafa !important;
     display: flex;
     flex-direction: column;
-    // // justify-content: space-evenly;
-    padding:3rem;
-    // min-width: min-content !important;
+    padding: 3rem;
     min-height: min-content !important;
     height: 100%;
-    mat-label{
-        // color:white;
-    }
 
-    input{
+    input {
         margin-bottom: 2rem;
         font-size: 1.2rem;
         line-height: 2rem;
         width: 10rem;
-        // background-color: aliceblue;
         opacity: 0.5;
-        // color:black;
-    
     }
 
-    .buttons{
-        margin-top:1rem;
+    .buttons {
+        margin-top: 1rem;
         justify-self: center;
-        // position: absolute;
-        bottom:1rem;
-        // width: 100%;
-        button{
+        bottom: 1rem;
+        button {
             height: 3rem;
             cursor: pointer;
         }
-       .returnButton{
-            // width:40%;
+        .returnButton {
             border-right: solid thin;
-        }
-        .saveButton{
-            // width:60%;
-            // background: #f79e02 !important;
-        }
-        .saveButton:hover{
-            // background: green !important;
-            // opacity: 1;
         }
     }
 }
 
 ::ng-deep .mat-dialog-container {
-    margin:0;
-    padding:0;
-    width:30vw;
-    height: 60vh;
+    margin: 0;
+    padding: 0;
+    min-width: 30vw;
+    min-height: 60vh;
     overflow: hidden;
+    @media only screen and (max-width: 550px) {
+        min-width: 60vw;
+        min-height: unset !important;
+    }
 }

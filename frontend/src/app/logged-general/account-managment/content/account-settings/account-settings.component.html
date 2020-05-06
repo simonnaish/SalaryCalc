@@ -15,9 +15,9 @@
 </div>
 
 <div class=buttons>
-    <button class=deleteButton mat-flat-button>DELETE</button>
+    <button class=deleteButton (click)=deleteAccount() mat-flat-button>DELETE</button>
     <a routerLink='/logged'><button class=returnButton mat-flat-button>RETURN</button></a>
-    <button class=saveButton mat-flat-button>SAVE</button>
+    <button class=saveButton (click)=saveChanges() mat-flat-button>SAVE</button>
 </div>
 
 </body>
