@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from 'src/app/reuseable/confirmation-dialog/confirmation-dialog.component';
+import { LoggerService } from 'src/app/services/logger.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { ConfirmationDialogComponent } from 'src/app/reuseable/confirmation-dial
 })
 export class AccountSettingsComponent implements OnInit {
 
-  constructor(private dialog:MatDialog) { }
+  constructor(private dialog:MatDialog, private logger: LoggerService) { }
 
   ngOnInit(): void {
   }
@@ -26,8 +27,7 @@ export class AccountSettingsComponent implements OnInit {
     dialogRef.afterClosed().subscribe((bool:boolean)=>{
       if(bool){
         //service.deleteAccount();
-        //service.logOut();
-        AppComponent._router.navigateByUrl('/');
+        this.logger.logOut();
         AppComponent.showMessage("Your account was deleted.", 'negative');
       }
     })

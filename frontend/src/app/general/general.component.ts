@@ -6,6 +6,7 @@ import { LogInComponent } from './generalDialogs/log-in/log-in.component'
 import { SignInComponent } from './generalDialogs/sign-in/sign-in.component';
 import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
+import { LoggerService } from '../services/logger.service';
 
 @Component({
   selector: 'app-general',
@@ -15,23 +16,24 @@ import { AppComponent } from '../app.component';
 export class GeneralComponent implements OnInit {
 
   static _dialog: MatDialog;
+  static _http:LoggerService;
+  static _router:Router;
 
-  constructor(public dialog: MatDialog, private router: Router) {
+  constructor(public dialog: MatDialog, private router: Router, private http:LoggerService) {
     GeneralComponent._dialog = dialog;
+    GeneralComponent._http=http;
+    GeneralComponent._router=router;
   }
 
 
   ngOnInit(): void {
+    this.http.logOut();
   }
 
   static staticLogIn() {
-    let generalComponent = new GeneralComponent(this._dialog, AppComponent._router);
+    let generalComponent = new GeneralComponent(this._dialog, this._router, this._http);
     generalComponent.logIn();
-  }
-
-  static logOut(){
-    let generalComponent=new GeneralComponent(this._dialog, AppComponent._router);
-    generalComponent.logOut();
+    
   }
 
   logIn(): void {

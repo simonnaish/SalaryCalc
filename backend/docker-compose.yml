@@ -1,11 +1,15 @@
 version: '2'
 services:
   db:
-    image: postgres:9.5
+    image: postgres:12
     environment:
-      - POSTGRES_USER:admin
-      - POSTGRES_PASSWORD:admin
-      - POSTGRES_DB:posts
+#      - POSTGRES_ROOT_PASSWORD:0224368914      
+      - POSTGRES_USER=db_user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=posts
+#      - POSTGRES_HOST_AUTH_METHOD:trust
+#      - DEBUG=1
+    
     ports:
       - "5432:5432"
     volumes:

@@ -9,6 +9,7 @@ import { GeneralComponent } from 'src/app/general/general.component';
 import { PopUpsComponent } from 'src/app/reuseable/pop-ups/pop-ups.component';
 
 import { MatTooltipCustomOptions, SnackBarCustomOptionsMessage, SnackBarCustomOptionsNegative, SnackBarCustomOptionsPositive } from 'src/app/reuseable/widgetsSettings'
+import { LoggerService } from './services/logger.service';
 
 
 
@@ -19,19 +20,18 @@ import { MatTooltipCustomOptions, SnackBarCustomOptionsMessage, SnackBarCustomOp
   styleUrls: ['./app.component.scss'],
   providers: [{
     provide: MAT_TOOLTIP_DEFAULT_OPTIONS, useValue: MatTooltipCustomOptions
-  }]
+  },
+]
 })
 
 
 export class AppComponent {
   title = 'SalaryCalc';
   static _snackBar;
-  static _router: Router;
 
 
-  constructor(private router: Router, private snackBar: MatSnackBar) {
+  constructor(private router: Router, private snackBar: MatSnackBar, private logger:LoggerService) {
     AppComponent._snackBar = snackBar;
-    AppComponent._router = router;
 
   }
 
@@ -63,11 +63,23 @@ export class AppComponent {
     })
   }
 
-  LogIn() {
-    // AppComponent.showMessage('testing', 'message');
+  logIn() {
+    if(this.logger.isLogged()){
+      this.logger.logOut()
+      this.router.navigateByUrl('/')
+      AppComponent.showMessage('Thank you for your visit!\nSee you soon!','positive')
 
-    GeneralComponent.staticLogIn();
-    // this.router.navigateByUrl('logged')
+    }else{
+      GeneralComponent.staticLogIn();
+    }
+  }
+
+  setLogInButton(){
+    if(!this.logger.isLogged()){
+      return 'specialAction';
+    }else{
+      return 'logged'
+    }
   }
 
 

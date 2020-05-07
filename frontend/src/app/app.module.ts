@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import {HttpClientModule} from '@angular/common/http'
 
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -48,12 +49,15 @@ import { ConfirmationDialogComponent } from './reuseable/confirmation-dialog/con
     PopUpsComponent,
     ConfirmationDialogComponent,
     
+    
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     MaterialModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
