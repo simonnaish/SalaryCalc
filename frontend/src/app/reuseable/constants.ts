@@ -1,10 +1,18 @@
+//Registration dialog and settings
+
 export const PAYMENT_RADIOS_GROUP= ['Daily', 'Weekly', 'Monthly', 'Yearly']
 export const PAYMENT_FOR_GROUP=['Person', 'Hour', 'Lesson']
 export const CURRENCIES =[{'name':'AUD','symbol':'$'},{'name':'EUR','symbol':'€'},{'name':'USD','symbol':'$'},{'name':'RUB','symbol':'₽'},
 {'name':'PLN','symbol':'zł'}]
 
-export const LANGUAGES_SELECT=[{'name':'Polish','id':'PL'},{'name':'English','id':'UK'}, {'name':'Spanish','id':'ESP'},{'name':"Italian",'id':'IT'}]
+export const LANGUAGES_SELECT=[{'name':'Polish','id':'PL'},{'name':'English','id':'UK'}, {'name':'Spanish','id':'ES'},{'name':"Italian",'id':'IT'}]
 
+
+//Services:
+export const APIUrl='http://127.0.0.1:8000/'
+
+
+//testing data
 export const DAILY_PROGRESS= [{ 'day': 1, 'date': '20-01-2020', 'income': 17, 'totalIncome': 12, 'progress': 3, 'totalProgress':3 },
 { 'day': 2, 'date': '20-02-2020', 'income': 15, 'totalIncome': 17, 'progress': 4, 'totalProgress':7 },
 {'day':3,'date':'20-02-2020','income':14,'totalIncome':31,'progress':3, 'totalProgress':10},

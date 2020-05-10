@@ -28,12 +28,14 @@ import { LoggerService } from './services/logger.service';
 export class AppComponent {
   title = 'SalaryCalc';
   static _snackBar;
+  public logButtonText='LogIn';
 
 
   constructor(private router: Router, private snackBar: MatSnackBar, private logger:LoggerService) {
     AppComponent._snackBar = snackBar;
 
   }
+
 
   static showMessage(message: string, type?: 'positive' | 'negative' | 'message') {
     let config:MatSnackBarConfig;
@@ -67,9 +69,11 @@ export class AppComponent {
     if(this.logger.isLogged()){
       this.logger.logOut()
       this.router.navigateByUrl('/')
+      // this.logButtonText='Log In'
       AppComponent.showMessage('Thank you for your visit!\nSee you soon!','positive')
 
     }else{
+      // this.logButtonText='Log Out'
       GeneralComponent.staticLogIn();
     }
   }
