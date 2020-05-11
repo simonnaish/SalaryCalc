@@ -27,6 +27,12 @@ class user_profile(models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="profile"
     )
     date_joined = models.DateTimeField(auto_now_add=True,)
+    basic_salary=models.BooleanField(default=False)
+    basic_salary_amount=models.FloatField(blank=True, null=True)
+    calculate_taxes=models.BooleanField(default=False)
+    taxes_amount=models.IntegerField(blank=True, null=True) #percents
+    fix_commission=models.BooleanField(default=True)
+    commission_amount=models.FloatField() #if fix commission:number, else:percent from income.
     payment_period = models.TextField(choices=PAYMENT_PERIOD_CHOICES)
     payment_for = models.TextField(choices=PAYMENT_FOR_CHOICES)
     currency = models.TextField(choices=CURRENCY_CHOICES)
@@ -38,9 +44,10 @@ class user_profile(models.Model):
 
 
 class progress_day(models.Model):
+    id=models.TextField(primary_key=True, auto_created=True)
     owner=models.TextField(blank=True);
     day = models.IntegerField()
-    date = models.DateField()
+    date = models.DateField(unique=True)
     income = models.FloatField()
     total_income = models.FloatField(blank=True)
     progress = models.FloatField()

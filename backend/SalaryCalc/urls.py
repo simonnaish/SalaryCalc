@@ -29,6 +29,6 @@ urlpatterns = [
     path("",include(router.urls)),
     path('admin/', admin.site.urls),
     path('api-token-auth/', obtain_auth_token_override, name='api_token_auth'),
-    path('create-user/', views.register_user.as_view(), name='register_user'),
+    path('register/', views.register_user.as_view(), name='register_user'),
 
 ]

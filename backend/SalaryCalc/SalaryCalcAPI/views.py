@@ -28,18 +28,26 @@ class register_user(ListCreateAPIView):
     serializer_class = user_serializer
 
     def perform_create(self, serializer):
+        data=self.request.data;
         user = User.objects.create_user(
-            self.request.data["username"],
-            self.request.data["email"],
-            self.request.data["password"],
+            data["username"],
+            data["email"],
+            data["password"],
         )
         user.save()
         _user_profile = user_profile.objects.create(
             user_id=user.id,
-            payment_period=self.request.data["payment_period"],
-            payment_for=self.request.data["payment_for"],
-            currency=self.request.data["currency"],
-            language=self.request.data["language"],
+            basic_salary=data["basic_salary"],
+            basic_salary_amount=data["basic_salary_amount"],
+            calculate_taxes=data["calculate_taxes"],
+            taxes_amount=data["taxes_amount"],
+            fix_commission=data["fix_commission"],
+            commission_amount=data["commission_amount"],
+            payment_period=data["payment_period"],
+            payment_for=data["payment_for"],
+            currency=data["currency"],
+            language=data["language"],
+
         )
         _user_profile.save()
 
@@ -52,46 +60,45 @@ class register_user(ListCreateAPIView):
 class progress_day_viewset(viewsets.ModelViewSet):
     queryset = progress_day.objects.all()
     serializer_class = progress_day_serializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsOwnerProfile,)
+
+    def get_queryset(self):
+        return progress_day.objects.filter(owner=self.request.user.username);
 
     def perform_create(self, serializer):
         owner = self.request.user.username
         data = self.request.data
         day = data["day"]
         date = data["date"]
+        id=owner+str(date);
         income = data["income"]
         progress = data["progress"]
-        try:
-            total_income = data["total_income"]
-        except KeyError:
-            last_object = (
-                progress_day.objects.filter(owner=self.request.user.username)
-                .order_by("date")
-                .values()
-                .last()
-            )
-            try:
-                last_income = last_object["income"]
-            except KeyError:
-                last_income = 0
-
-            total_income = float(income) + float(last_income)
-        try:
-            total_progress = data["total_progress"]
-        except KeyError:
-            last_object = (
-                progress_day.objects.filter(owner=self.request.user.username)
-                .order_by("date")
-                .values()
-                .last()
-            )
-            try:
-                last_progress = last_object["progress"]
-            except KeyError:
-                last_progress = 0
-            total_progress =float(progress) + float(last_progress)
+        for param in ['total_income', 'total_progress']:
+            if int(data[param]) !=0:
+                total = data[param]
+                if(param=='total_income'):
+                    total_income=total;
+                else:
+                    total_progress=total;
+            else:
+                # last_income=9999
+                last_object = (
+                    progress_day.objects.filter(owner=self.request.user.username)
+                    .order_by("date")
+                    .values()
+                    .last()
+                )
+                try:
+                    last = last_object[param]
+                except :
+                    last = 0
+                if(param=='total_income'):
+                    total_income = float(income) + float(last)
+                else:
+                    total_progress=float(progress)+float(last)
 
         _day = progress_day.objects.create(
+            id=id,
             owner=owner,
             day=day,
             date=date,

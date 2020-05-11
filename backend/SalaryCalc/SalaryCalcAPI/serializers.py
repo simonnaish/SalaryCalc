@@ -10,7 +10,7 @@ class user_serializer(serializers.ModelSerializer):
         fields = "__all__"
 
 class progress_day_serializer(serializers.ModelSerializer):
-    # id=serializers.DateField(source='date')
+    id=serializers.StringRelatedField(read_only=True)
     class Meta:
         model= progress_day;
         fields= '__all__'

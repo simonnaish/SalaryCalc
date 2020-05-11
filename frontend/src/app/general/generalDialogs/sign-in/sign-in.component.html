@@ -97,6 +97,7 @@
     <mat-step>
         <ng-template matStepLabel><h2>How much is your comission?</h2></ng-template>
         <mat-radio-group [(ngModel)]='fixCommission' #fixCommissionGroup>
+            <mat-label>Do you receive fix commission?</mat-label>
             <mat-radio-button *ngFor='let choice of trueOrFalseGroup' [value]=choice>{{choice}}</mat-radio-button>
         </mat-radio-group>
 

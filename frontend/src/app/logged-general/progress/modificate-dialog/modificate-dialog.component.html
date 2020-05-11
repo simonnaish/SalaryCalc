@@ -1,15 +1,15 @@
 <body>
-    <mat-label>Change day</mat-label>
+    <mat-label>Set up day</mat-label>
     <input #dayInput matInput type="number" [value]=data.record.day>
-    <mat-label>Change date</mat-label>
-    <input disabled #dateInput matInput type="text" [value]=data.record.date>
-    <mat-label>Change income</mat-label>
+    <mat-label>Set up date</mat-label>
+    <input #dateInput matInput type="date" [value]=data.record.date>
+    <mat-label>Set up income</mat-label>
     <input #incomeInput matInput type="number" [value]=data.record.income>
-    <mat-label>Change total amount</mat-label>
+    <mat-label>Set up total amount<br><i>Type "0" to calculate automaticly.</i></mat-label>
     <input #totalIncomeInput matInput type="number" [value]=data.record.totalIncome>
-    <mat-label>Change progress</mat-label>
+    <mat-label>Set up progress</mat-label>
     <input #progressInput matInput type="number" [value]=data.record.progress>
-    <mat-label>Change total progress</mat-label>
+    <mat-label>Set up total progress<br><i>Type "0" to calculate automaticly.</i></mat-label>
     <input #totalProgressInput matInput type="number" [value]=data.record.totalProgress>
 
     <div class=buttons>
