@@ -7,6 +7,7 @@ from .reuseable.constants import (
     CURRENCY_CHOICES,
     LANGUAGE_CHOICES,
     PAYMENT_FOR_CHOICES,
+    ACCOUNT_TYPES
 )
 from django.utils.translation import ugettext_lazy as _
 
@@ -26,6 +27,7 @@ class user_profile(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="profile"
     )
+    account_type=models.TextField(choices=ACCOUNT_TYPES)
     date_joined = models.DateTimeField(auto_now_add=True,)
     basic_salary=models.BooleanField(default=False)
     basic_salary_amount=models.FloatField(blank=True, null=True)

@@ -2,8 +2,8 @@
     <h2>Language</h2>
     <div class=languageForm>
         <mat-label>Change language:</mat-label>
-        <mat-select [(ngModel)]=languageSelected>
-            <mat-option *ngFor="let language of languagesSelect" value=language.id>{{language.name}}</mat-option>
+        <mat-select [(ngModel)]="languageSelected.id">
+            <mat-option *ngFor="let language of languagesSelect" [value]=language.id>{{language.name}}</mat-option>
         </mat-select>
     </div>
 

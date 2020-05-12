@@ -22,3 +22,7 @@ LANGUAGE_CHOICES=[
     ('ES', 'Espanol'),
     ('IT', 'Italiano')
 ]
+ACCOUNT_TYPES=[
+    ('Free', 'Free'),
+    ('Premium', 'Premium')
+]

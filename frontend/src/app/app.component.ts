@@ -9,7 +9,7 @@ import { GeneralComponent } from 'src/app/general/general.component';
 import { PopUpsComponent } from 'src/app/reuseable/pop-ups/pop-ups.component';
 
 import { MatTooltipCustomOptions, SnackBarCustomOptionsMessage, SnackBarCustomOptionsNegative, SnackBarCustomOptionsPositive } from 'src/app/reuseable/widgetsSettings'
-import { LoggerService } from './services/logger.service';
+import { LoggerService } from './services/loggerService/logger.service';
 
 
 
@@ -18,10 +18,7 @@ import { LoggerService } from './services/logger.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [{
-    provide: MAT_TOOLTIP_DEFAULT_OPTIONS, useValue: MatTooltipCustomOptions
-  },
-]
+ 
 })
 
 

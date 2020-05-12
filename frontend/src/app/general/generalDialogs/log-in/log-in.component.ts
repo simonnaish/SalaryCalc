@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog'
 import { AppComponent } from 'src/app/app.component';
-import { LoggerService } from 'src/app/services/logger.service';
+import { LoggerService } from 'src/app/services/loggerService/logger.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.scss']
+  styleUrls: ['./log-in.component.scss'],
+
 })
 export class LogInComponent implements OnInit {
 

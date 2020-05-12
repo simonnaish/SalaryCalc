@@ -12,15 +12,17 @@ export class CalculationSettingsComponent implements OnInit {
 
   currencies=CURRENCIES
 
-  currentCurrency={'name':'EUR', 'symbol':'€'}
-  basicSalaryCheckbox=true;
+  user=JSON.parse(localStorage.getItem('User'))[0]
+
+  currentCurrency=this.user.currency;
+  basicSalaryCheckbox=this.user.basic_salary;
   basicSalaryForm='visible';
-  currentCommission=12;
-  commissionCalc='fixed';
+  currentCommission=this.user.commission_amount;
+  commissionCalc=this.user.fixed_commission?'percent':'fixed';
   paymentForGroup=PAYMENT_FOR_GROUP;
-  paymentFor='Hour'
+  paymentFor=this.user.payment_for
   paymentPeriodGroup=PAYMENT_RADIOS_GROUP;
-  paymentPeriod="Monthly"
+  paymentPeriod=this.user.payment_period
 
 
   constructor() { }

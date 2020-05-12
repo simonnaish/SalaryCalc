@@ -6,15 +6,15 @@
     <mat-label>Set up income</mat-label>
     <input #incomeInput matInput type="number" [value]=data.record.income>
     <mat-label>Set up total amount<br><i>Type "0" to calculate automaticly.</i></mat-label>
-    <input #totalIncomeInput matInput type="number" [value]=data.record.totalIncome>
+    <input #totalIncomeInput matInput type="number" [value]=data.record.total_income>
     <mat-label>Set up progress</mat-label>
     <input #progressInput matInput type="number" [value]=data.record.progress>
     <mat-label>Set up total progress<br><i>Type "0" to calculate automaticly.</i></mat-label>
-    <input #totalProgressInput matInput type="number" [value]=data.record.totalProgress>
+    <input #totalProgressInput matInput type="number" [value]=data.record.total_progress>
 
     <div class=buttons>
         <button class=returnButton (click)=return() mat-flat-button>RETURN</button>
-        <button *ngIf="data.new!=true" mat-flat-button class=deleteButton (click)=deleteRecord()>DELETE</button>
+        <button *ngIf="data.new!=true" mat-flat-button class=deleteButton (click)=deleteRecord(dateInput.value)>DELETE</button>
         <button class=saveButton (click)='saveRecord(dayInput.value, dateInput.value, incomeInput.value, totalIncomeInput.value, progressInput.value, totalProgressInput.value)' mat-flat-button>SAVE</button>
     </div>
 </body>

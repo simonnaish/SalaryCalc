@@ -27,7 +27,6 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 
-
 import {ChartsModule} from 'ng2-charts'
 
 

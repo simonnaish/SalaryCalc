@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from 'src/app/reuseable/confirmation-dialog/confirmation-dialog.component';
-import { LoggerService } from 'src/app/services/logger.service';
+import { LoggerService } from 'src/app/services/loggerService/logger.service';
 
 
 @Component({
@@ -11,6 +11,9 @@ import { LoggerService } from 'src/app/services/logger.service';
   styleUrls: ['./account-settings.component.scss']
 })
 export class AccountSettingsComponent implements OnInit {
+
+
+  username=localStorage.getItem('Login');
 
   constructor(private dialog:MatDialog, private logger: LoggerService) { }
 

@@ -2,7 +2,7 @@
     <h2>Currency</h2>
     <mat-form-field class=currencyForm>
 
-        <mat-label>{{currentCurrency.name}}</mat-label>
+        <mat-label>{{currentCurrency}}</mat-label>
         <mat-select>
             <mat-option *ngFor="let currency of currencies" [value]=currency>{{currency.name}} {{currency.symbol}}
             </mat-option>

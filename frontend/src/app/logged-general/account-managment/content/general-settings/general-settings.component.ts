@@ -9,10 +9,13 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./general-settings.component.scss']
 })
 export class GeneralSettingsComponent implements OnInit {
-
-  languageSelected={'name':'English', 'id':'UK'}
+  
+  user=JSON.parse(localStorage.getItem('User'))[0];
+  
+  languageSelected=this.user.language;
   languagesSelect=LANGUAGES_SELECT;
-
+    
+  
   salaryTime=true;
   forgotToUpdate=false;
   newses=true;
@@ -20,6 +23,8 @@ export class GeneralSettingsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.languageSelected)
+    console.log(this.languagesSelect)
   }
 
   saveChanges(){

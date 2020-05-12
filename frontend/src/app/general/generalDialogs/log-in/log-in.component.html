@@ -1,5 +1,6 @@
 <body>
 <!-- <div class=labelInput> -->
+    <!-- <form (keyup.enter="logIn(usernameInput.value, passwordInput.value)")>  -->
 <label>username</label>
 <input #usernameInput type="text">
 <!-- </div> -->
@@ -12,5 +13,5 @@
     <button class=reject_button mat-flat-button mat-dialog-close>Close</button>
     <button class=confirm_button mat-flat-button (click)="logIn(usernameInput.value, passwordInput.value)">Login</button>
 </div>
-
+<!-- </form> -->
 </body>

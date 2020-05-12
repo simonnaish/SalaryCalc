@@ -3,11 +3,12 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material/dial
 import { ProgressDay } from '../progress.component';
 import { AppComponent } from 'src/app/app.component';
 import { ConfirmationDialogComponent } from 'src/app/reuseable/confirmation-dialog/confirmation-dialog.component';
-import { LoggerService } from 'src/app/services/logger.service';
+import { LoggerService } from 'src/app/services/loggerService/logger.service';
 @Component({
   selector: 'app-modificate-dialog',
   templateUrl: './modificate-dialog.component.html',
-  styleUrls: ['./modificate-dialog.component.scss']
+  styleUrls: ['./modificate-dialog.component.scss'],
+
 })
 export class ModificateDialogComponent implements OnInit {
 
@@ -53,14 +54,14 @@ saveRecord(day, date, income, totalIncome, progress, totalProgress) {
     })
 }
 
-deleteRecord() {
+deleteRecord(date) {
   let message = "Full  day will be completely deleted from your database."
   const confirmationDialog = this.dialog.open(ConfirmationDialogComponent, {
     data: { 'message': message }
   })
   confirmationDialog.afterClosed().subscribe((bool: boolean) => {
     if (bool) {
-      //DELETE data
+      this.logger.removeDay(date);
       this.dialogRef.close(true);
       AppComponent.showMessage('Record deleted.', 'positive');
     }

@@ -28,11 +28,9 @@ class register_user(ListCreateAPIView):
     serializer_class = user_serializer
 
     def perform_create(self, serializer):
-        data=self.request.data;
+        data = self.request.data
         user = User.objects.create_user(
-            data["username"],
-            data["email"],
-            data["password"],
+            data["username"], data["email"], data["password"],
         )
         user.save()
         _user_profile = user_profile.objects.create(
@@ -47,7 +45,6 @@ class register_user(ListCreateAPIView):
             payment_for=data["payment_for"],
             currency=data["currency"],
             language=data["language"],
-
         )
         _user_profile.save()
 
@@ -63,23 +60,23 @@ class progress_day_viewset(viewsets.ModelViewSet):
     permission_classes = (IsOwnerProfile,)
 
     def get_queryset(self):
-        return progress_day.objects.filter(owner=self.request.user.username);
+        return progress_day.objects.filter(owner=self.request.user.username)
 
     def perform_create(self, serializer):
         owner = self.request.user.username
         data = self.request.data
         day = data["day"]
         date = data["date"]
-        id=owner+str(date);
+        idx = owner + str(date)
         income = data["income"]
         progress = data["progress"]
-        for param in ['total_income', 'total_progress']:
-            if int(data[param]) !=0:
+        for param in ["total_income", "total_progress"]:
+            if int(data[param]) != 0:
                 total = data[param]
-                if(param=='total_income'):
-                    total_income=total;
+                if param == "total_income":
+                    total_income = total
                 else:
-                    total_progress=total;
+                    total_progress = total
             else:
                 # last_income=9999
                 last_object = (
@@ -90,15 +87,15 @@ class progress_day_viewset(viewsets.ModelViewSet):
                 )
                 try:
                     last = last_object[param]
-                except :
+                except:
                     last = 0
-                if(param=='total_income'):
+                if param == "total_income":
                     total_income = float(income) + float(last)
                 else:
-                    total_progress=float(progress)+float(last)
+                    total_progress = float(progress) + float(last)
 
         _day = progress_day.objects.create(
-            id=id,
+            id=idx,
             owner=owner,
             day=day,
             date=date,

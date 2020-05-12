@@ -11,9 +11,17 @@ export class AccountManagmentComponent implements OnInit {
   buttonTransition='topButton'
   menuTransition='visibleMenu';
 
+  username=localStorage.getItem('Login');
+  // =localStorage.getItem('User');
+  userProfile=JSON.parse(localStorage.getItem('User'))[0];
+  accountType=this.userProfile.account_type;
+
   constructor() { }
 
   ngOnInit(): void {
+    // this.accountType=this.userProfile.account_type;
+    console.log(this.userProfile);
+    console.log(this.userProfile.account_type)
   }
 
 

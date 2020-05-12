@@ -12,6 +12,7 @@ import { AccountSettingsComponent } from './logged-general/account-managment/con
 import { CalculationSettingsComponent } from './logged-general/account-managment/content/calculation-settings/calculation-settings.component';
 import { GeneralSettingsComponent } from './logged-general/account-managment/content/general-settings/general-settings.component';
 import { SecuritySettingsComponent } from './logged-general/account-managment/content/security-settings/security-settings.component';
+import { DataResolverService } from './reuseable/resolver/data-resolver.service';
 
 
 const routes: Routes = [
@@ -26,12 +27,13 @@ const routes: Routes = [
       { path: 'securitySettings', component: SecuritySettingsComponent }
     ]
   },
-  { path: 'statistics', component: StatisticsComponent },
-  { path: 'progress', component: ProgressComponent }
+  { path: 'statistics', component: StatisticsComponent, resolve:{days:DataResolverService}},
+  { path: 'progress', component: ProgressComponent, resolve:{days:DataResolverService} }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[DataResolverService]
 })
 export class AppRoutingModule { }

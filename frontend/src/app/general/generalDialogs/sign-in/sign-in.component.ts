@@ -6,13 +6,14 @@ import { MatFormFieldControl } from '@angular/material/form-field';
 import { PAYMENT_FOR_GROUP, PAYMENT_RADIOS_GROUP } from 'src/app/reuseable/constants'
 import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AppComponent } from 'src/app/app.component';
-import { LoggerService } from 'src/app/services/logger.service';
+import { LoggerService } from 'src/app/services/loggerService/logger.service';
 
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss']
+  styleUrls: ['./sign-in.component.scss'],
+ 
 })
 export class SignInComponent implements OnInit {
 

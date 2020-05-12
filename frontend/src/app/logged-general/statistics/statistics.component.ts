@@ -7,6 +7,7 @@ import { DAILY_PROGRESS } from 'src/app/reuseable/constants'
 // import * as CanvasJS from '../canvasjs.min.js'
 import { Color, Label } from 'ng2-charts';
 import { AppComponent } from 'src/app/app.component.js';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-statistics',
@@ -44,18 +45,20 @@ export class StatisticsComponent implements OnInit {
 
   totalIncomeAndProgressChartData;
 
+  fetchedData:any;
 
   minIncome;
   maxIncome;
   minProgress;
   maxProgress;
 
-  constructor() { }
+  constructor(private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.setUpMinMax(DAILY_PROGRESS);
+    this.activatedRoute.data.subscribe((data:{days:any})=>this.fetchedData=data.days)
+    this.setUpMinMax(this.fetchedData);
 
-    this.ChartLabels = this.generateLabels(DAILY_PROGRESS);
+    this.ChartLabels = this.generateLabels(this.fetchedData);
 
     this.drawCharts();
   }

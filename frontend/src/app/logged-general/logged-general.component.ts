@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-logged-general',
   templateUrl: './logged-general.component.html',
-  styleUrls: ['./logged-general.component.scss']
+  styleUrls: ['./logged-general.component.scss'],
+
 })
 export class LoggedGeneralComponent implements OnInit {
 

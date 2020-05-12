@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 
 import {HttpClientModule} from '@angular/common/http'
+// import {HttpClientTestingModule} from '@angular/common/http/testing'
 
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +28,8 @@ import { SecuritySettingsComponent } from './logged-general/account-managment/co
 import { ModificateDialogComponent } from './logged-general/progress/modificate-dialog/modificate-dialog.component';
 import { PopUpsComponent } from './reuseable/pop-ups/pop-ups.component';
 import { ConfirmationDialogComponent } from './reuseable/confirmation-dialog/confirmation-dialog.component';
-
+import {DataResolverService} from 'src/app/reuseable/resolver/data-resolver.service'
+// import {Res} from '@angular/router'
 
 
 
@@ -48,6 +51,7 @@ import { ConfirmationDialogComponent } from './reuseable/confirmation-dialog/con
     ModificateDialogComponent,
     PopUpsComponent,
     ConfirmationDialogComponent,
+    // DataResolverService
     
     
   ],
@@ -57,9 +61,10 @@ import { ConfirmationDialogComponent } from './reuseable/confirmation-dialog/con
     AppRoutingModule,
     HttpClientModule,
     MaterialModule,
+    OverlayModule,
   
   ],
-  providers: [],
+  providers: [DataResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

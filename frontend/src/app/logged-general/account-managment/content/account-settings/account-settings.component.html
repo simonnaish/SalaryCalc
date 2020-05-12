@@ -1,10 +1,10 @@
 <body>
 
 <div class=loginEmailPicture>
-    <mat-label id=usernameLabel>Change your username:</mat-label>
-    <input id=usernameInput matInput type="text" placeholder="username">
+    <mat-label  id=usernameLabel>Change your username:</mat-label>
+    <input [(ngModel)]=username id=usernameInput matInput type="text" placeholder="username">
     <mat-label id=emailLabel>Change your email address:</mat-label>
-    <input id=emailInput matInput type="email" placeholder="dsada@gmail.com">
+    <input  id=emailInput matInput type="email" placeholder="dsada@gmail.com">
     <mat-label id=imgLabel>Change your profile photo:</mat-label>
     <img  src='./assets/img/dialog_background.jpg' alt='profilePhoto'>
 </div>
