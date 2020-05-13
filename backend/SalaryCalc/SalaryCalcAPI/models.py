@@ -28,6 +28,7 @@ class user_profile(models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="profile"
     )
     account_type=models.TextField(choices=ACCOUNT_TYPES)
+    simple_view=models.BooleanField(default=True, auto_created=True)
     date_joined = models.DateTimeField(auto_now_add=True,)
     basic_salary=models.BooleanField(default=False)
     basic_salary_amount=models.FloatField(blank=True, null=True)

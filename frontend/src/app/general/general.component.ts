@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { MatDialog } from '@angular/material/dialog/';
 
 import { LogInComponent } from './generalDialogs/log-in/log-in.component'
 import { SignInComponent } from './generalDialogs/sign-in/sign-in.component';
-import { Router } from '@angular/router';
-import { AppComponent } from '../app.component';
 import { LoggerService } from '../services/loggerService/logger.service';
+
+import{openLoginDialog}from 'src/app/reuseable/openLoginDialog'
 
 @Component({
   selector: 'app-general',
@@ -15,14 +16,8 @@ import { LoggerService } from '../services/loggerService/logger.service';
 })
 export class GeneralComponent implements OnInit {
 
-  static _dialog: MatDialog;
-  static _http: LoggerService;
-  static _router: Router;
-
   constructor(public dialog: MatDialog, private router: Router, private http: LoggerService) {
-    GeneralComponent._dialog = dialog;
-    GeneralComponent._http = http;
-    GeneralComponent._router = router;
+  
   }
 
 
@@ -30,19 +25,9 @@ export class GeneralComponent implements OnInit {
     this.http.logOut();
   }
 
-  static staticLogIn() {
-    let generalComponent = new GeneralComponent(this._dialog, this._router, this._http);
-    generalComponent.logIn();
-
-  }
 
   logIn(): void {
-    const dialogRef = this.dialog.open(LogInComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.router.navigateByUrl('/logged');
-      }
-    });
+    openLoginDialog(this.dialog, this.router);
   }
   signIn() {
     const dialogRef = this.dialog.open(SignInComponent);
@@ -53,9 +38,6 @@ export class GeneralComponent implements OnInit {
     })
   }
 
-  logOut() {
-
-  }
 
 
 }

@@ -8,6 +8,8 @@ import { DAILY_PROGRESS } from 'src/app/reuseable/constants'
 import { Color, Label } from 'ng2-charts';
 import { AppComponent } from 'src/app/app.component.js';
 import { ActivatedRoute } from '@angular/router';
+import {ProgressDay} from 'src/app/reuseable/constants'
+
 
 @Component({
   selector: 'app-statistics',
@@ -45,33 +47,33 @@ export class StatisticsComponent implements OnInit {
 
   totalIncomeAndProgressChartData;
 
-  fetchedData:any;
+  fetchedData: any;
 
   minIncome;
   maxIncome;
   minProgress;
   maxProgress;
 
-  constructor(private activatedRoute:ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe((data:{days:any})=>this.fetchedData=data.days)
+    this.activatedRoute.data.subscribe((data: { days: any }) => this.fetchedData = data.days)
     this.setUpMinMax(this.fetchedData);
 
     this.ChartLabels = this.generateLabels(this.fetchedData);
 
     this.drawCharts();
   }
-  setUpMinMax(DAILY_PROGRESS: { day: number; date: string; income: number; totalIncome: number; progress: number; totalProgress:number }[]) {
-    let minMaxList=this.findMaxAndMin(DAILY_PROGRESS);
-    this.minIncome=minMaxList[0];
-    this.maxIncome=minMaxList[1];
-    this.minProgress=minMaxList[2];
-    this.maxProgress=minMaxList[3];
+  setUpMinMax(DAILY_PROGRESS: ProgressDay[]) {
+    let minMaxList = this.findMaxAndMin(DAILY_PROGRESS);
+    this.minIncome = minMaxList[0];
+    this.maxIncome = minMaxList[1];
+    this.minProgress = minMaxList[2];
+    this.maxProgress = minMaxList[3];
   }
 
   drawCharts() {
-    let dataPoints = this.generateDataPoints(DAILY_PROGRESS)
+    let dataPoints = this.generateDataPoints(this.fetchedData)
     this.dailyIncomeAndProgressChartData = [
       { data: dataPoints[0], label: "Earned" },
       { data: dataPoints[1], label: "Progress" }
@@ -82,17 +84,17 @@ export class StatisticsComponent implements OnInit {
     ]
   }
 
-  generateLabels(list: any[]): string[] {
+  generateLabels(list: ProgressDay[]): string[] {
     let labels = []
-    for (let el of list.keys()) {
-      labels.push(el.toString());
+    for (let el of list) {
+      labels.push(el.date.toString());
     }
     return labels;
   }
 
 
   generateDataPoints(list: any[]): {}[] {
-    let currentDay;
+    let currentDate;
 
     let income = [];
     let progress = [];
@@ -104,48 +106,48 @@ export class StatisticsComponent implements OnInit {
     let currentProgress = 0;
 
     for (var el of list.keys()) {
-      currentDay = list[el].day;
-      income.push({ label: currentDay, y: list[el].income })
-      progress.push({ label: currentDay, y: list[el].progress })
+      currentDate = list[el].date;
+      income.push({ label: currentDate, y: list[el].income })
+      progress.push({ label: currentDate, y: list[el].progress })
       currentIncome += list[el].income;
       currentProgress += list[el].progress;
-      earned.push({ label: currentDay, y: currentIncome })
-      totalProgress.push({ label: currentDay.day, y: currentProgress })
+      earned.push({ label: currentDate, y: currentIncome })
+      totalProgress.push({ label: currentDate, y: currentProgress })
 
     }
     return [income, progress, earned, totalProgress];
   }
 
-  findMaxAndMin(list: any[]): any[] {
+  findMaxAndMin(list: ProgressDay[]): any[] {
     let incomeMinValue: number = 9999;
     let incomeMaxValue: number = 0;
-    let incomeMin: number;
-    let incomeMax: number;
+    let incomeMin: string | Date;
+    let incomeMax: string | Date;
 
     let progressMinValue: number = 9999;
     let progressMaxValue: number = 0;
-    let progressMin: number;
-    let progressMax: number;
+    let progressMin: string | Date;
+    let progressMax: string | Date;
 
-    for (let el of list.keys()) {
-      if (incomeMinValue > list[el].income) {
-        incomeMinValue = list[el].income;
-        incomeMin = el;
+    for (let el of list) {
+      if (incomeMinValue > el.income) {
+        incomeMinValue = el.income;
+        incomeMin = el.date;
       }
-      if (incomeMaxValue < list[el].income) {
-        incomeMaxValue = list[el].income;
-        incomeMax = el;
+      if (incomeMaxValue < el.income) {
+        incomeMaxValue = el.income;
+        incomeMax = el.date;
       }
-      if (progressMinValue > list[el].progress) {
-        progressMinValue = list[el].progress;
-        progressMin = el;
+      if (progressMinValue > el.progress) {
+        progressMinValue = el.progress;
+        progressMin = el.date;
       }
-      if (progressMaxValue < list[el].progress) {
-        progressMaxValue = list[el].progress;
-        progressMax = el;
+      if (progressMaxValue < el.progress) {
+        progressMaxValue = el.progress;
+        progressMax = el.date;
       }
     }
-    return [{ 'id': incomeMin, 'value': incomeMinValue }, { 'id': incomeMax, 'value': incomeMaxValue }, 
+    return [{ 'id': incomeMin, 'value': incomeMinValue }, { 'id': incomeMax, 'value': incomeMaxValue },
     { 'id': progressMin, 'value': progressMinValue }, { 'id': progressMax, 'value': progressMaxValue }];
   }
 

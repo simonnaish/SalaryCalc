@@ -3,13 +3,15 @@ import { Router } from '@angular/router';
 
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { MAT_TOOLTIP_DEFAULT_OPTIONS, MatTooltipDefaultOptions } from '@angular/material/tooltip';
+import { MatTooltipCustomOptions, SnackBarCustomOptionsMessage, SnackBarCustomOptionsNegative, SnackBarCustomOptionsPositive } from 'src/app/reuseable/widgetsSettings'
+import { MatDialog } from '@angular/material/dialog';
 
 
 import { GeneralComponent } from 'src/app/general/general.component';
 import { PopUpsComponent } from 'src/app/reuseable/pop-ups/pop-ups.component';
-
-import { MatTooltipCustomOptions, SnackBarCustomOptionsMessage, SnackBarCustomOptionsNegative, SnackBarCustomOptionsPositive } from 'src/app/reuseable/widgetsSettings'
 import { LoggerService } from './services/loggerService/logger.service';
+
+import{openLoginDialog}from 'src/app/reuseable/openLoginDialog'
 
 
 
@@ -28,7 +30,7 @@ export class AppComponent {
   public logButtonText='LogIn';
 
 
-  constructor(private router: Router, private snackBar: MatSnackBar, private logger:LoggerService) {
+  constructor(private router: Router, private snackBar: MatSnackBar, private logger:LoggerService, public dialog:MatDialog) {
     AppComponent._snackBar = snackBar;
 
   }
@@ -66,12 +68,10 @@ export class AppComponent {
     if(this.logger.isLogged()){
       this.logger.logOut()
       this.router.navigateByUrl('/')
-      // this.logButtonText='Log In'
       AppComponent.showMessage('Thank you for your visit!\nSee you soon!','positive')
 
     }else{
-      // this.logButtonText='Log Out'
-      GeneralComponent.staticLogIn();
+      openLoginDialog(this.dialog, this.router);
     }
   }
 

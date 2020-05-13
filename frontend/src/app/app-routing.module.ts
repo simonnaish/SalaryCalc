@@ -17,7 +17,7 @@ import { DataResolverService } from './reuseable/resolver/data-resolver.service'
 
 const routes: Routes = [
   { path: '', component: GeneralComponent },
-  { path: 'logged', component: LoggedGeneralComponent },
+  { path: 'logged', component: LoggedGeneralComponent, resolve:{days:DataResolverService} },
   {
     path: 'account', component: AccountManagmentComponent, children: [
       { path: 'about', component: AboutComponent },

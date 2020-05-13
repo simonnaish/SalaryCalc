@@ -35,6 +35,7 @@ class register_user(ListCreateAPIView):
         user.save()
         _user_profile = user_profile.objects.create(
             user_id=user.id,
+            simple_view=True,
             basic_salary=data["basic_salary"],
             basic_salary_amount=data["basic_salary_amount"],
             calculate_taxes=data["calculate_taxes"],
@@ -55,12 +56,12 @@ class register_user(ListCreateAPIView):
 
 # @csrf_exempt
 class progress_day_viewset(viewsets.ModelViewSet):
-    queryset = progress_day.objects.all()
+    queryset = progress_day.objects.all().order_by('date');
     serializer_class = progress_day_serializer
     permission_classes = (IsOwnerProfile,)
 
     def get_queryset(self):
-        return progress_day.objects.filter(owner=self.request.user.username)
+        return progress_day.objects.filter(owner=self.request.user.username).order_by('date')
 
     def perform_create(self, serializer):
         owner = self.request.user.username

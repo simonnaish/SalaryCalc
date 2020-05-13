@@ -1,20 +1,21 @@
 <body>
     <mat-label>Set up day</mat-label>
-    <input #dayInput matInput type="number" [value]=data.record.day>
+    <input [(ngModel)]=day matInput type="number" [value]=data.record.day>
     <mat-label>Set up date</mat-label>
-    <input #dateInput matInput type="date" [value]=data.record.date>
+    <input [(ngModel)]=date matInput type="date" [value]=data.record.date>
     <mat-label>Set up income</mat-label>
-    <input #incomeInput matInput type="number" [value]=data.record.income>
+    <input [(ngModel)]=income matInput type="number" [value]=data.record.income>
     <mat-label>Set up total amount<br><i>Type "0" to calculate automaticly.</i></mat-label>
-    <input #totalIncomeInput matInput type="number" [value]=data.record.total_income>
+    <input [(ngModel)]=totalIncome matInput type="number" [value]=data.record.totalIncome>
     <mat-label>Set up progress</mat-label>
-    <input #progressInput matInput type="number" [value]=data.record.progress>
+    <input [(ngModel)]=progress matInput type="number" [value]=data.record.progress>
     <mat-label>Set up total progress<br><i>Type "0" to calculate automaticly.</i></mat-label>
-    <input #totalProgressInput matInput type="number" [value]=data.record.total_progress>
+    <input [(ngModel)]=totalProgress matInput type="number" [value]=data.record.totalProgress>
 
     <div class=buttons>
         <button class=returnButton (click)=return() mat-flat-button>RETURN</button>
-        <button *ngIf="data.new!=true" mat-flat-button class=deleteButton (click)=deleteRecord(dateInput.value)>DELETE</button>
-        <button class=saveButton (click)='saveRecord(dayInput.value, dateInput.value, incomeInput.value, totalIncomeInput.value, progressInput.value, totalProgressInput.value)' mat-flat-button>SAVE</button>
+        <button *ngIf="data.new!=true" mat-flat-button class=deleteButton (click)=deleteRecord()>DELETE</button>
+        <button class=saveButton (click)='saveRecord()' mat-flat-button>SAVE</button>
     </div>
+    <!-- dayInput.value, dateInput.value, incomeInput.value, totalIncomeInput.value, progressInput.value, totalProgressInput.value -->
 </body>

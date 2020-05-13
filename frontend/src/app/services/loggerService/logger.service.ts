@@ -2,7 +2,7 @@ import { Injectable, LOCALE_ID, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppComponent } from '../../app.component';
 
-import { APIUrl } from '../../reuseable/constants'
+import { APIUrl, APIProgressDay } from '../../reuseable/constants'
 import { DatePipe, formatDate } from '@angular/common';
 import { Observable } from 'rxjs';
 
@@ -84,38 +84,30 @@ export class LoggerService {
     return promise
   }
 
-  createDay(day: number, date: string | Date, income: number, totalIncome: number, progress: number, totalProgress: number) {
+  createDay(day: number, date: string | Date, income: number, totalIncome: number, progress: number, totalProgress: number):Promise<APIProgressDay> {
     let fdate = formatDate(date, 'yyyy-MM-dd', this.locale);
-    let promise = this.http.post(this.crudUrl, {
+    let promise = this.http.post<APIProgressDay>(this.crudUrl, {
       'day': day, 'date': fdate, 'income': income,
       'total_income': totalIncome, 'progress': progress, 'total_progress': totalProgress
-    }, this.httpOptions).toPromise().then(result => {
-      console.log(result)
-    },
-      error => console.log(error)
-    )
+    }, this.httpOptions).toPromise()
     return promise
   }
 
 
-  modificateDay(day: number, date: string | Date, income: number, totalIncome: number, progress: number, totalProgress: number) {
+  modificateDay(day: number, date: string | Date, income: number, totalIncome: number, progress: number, totalProgress: number):Promise<APIProgressDay> {
     let fdate = this.getFormatedDate(date);
     let id = this.generateId(fdate);
-    let promise = this.http.put(this.crudUrl + id + '/', {
+    let promise = this.http.put<APIProgressDay>(this.crudUrl + id + '/', {
       'day': day, 'date': fdate, 'income': income,
       'total_income': totalIncome, 'progress': progress, 'total_progress': totalProgress
-    }, this.httpOptions).toPromise().then(result => {
-      console.log(result)
-    },
-      error => console.log(error)
-    )
+    }, this.httpOptions).toPromise()
     return promise
   }
 
-  removeDay(date:string |Date){
+  removeDay(date:string |Date):Promise<APIProgressDay>{
     let fdate=this.getFormatedDate(date);
     let id=this.generateId(fdate); 
-    let promise=this.http.delete(this.crudUrl+id, this.httpOptions).toPromise();
+    let promise=this.http.delete<APIProgressDay>(this.crudUrl+id, this.httpOptions).toPromise();
     return promise;
   }
   
