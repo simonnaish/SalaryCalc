@@ -1,0 +1,26 @@
+<body>
+
+    <mat-label>Set up day</mat-label>
+    <input [(ngModel)]=day matInput type="number" [value]=data.record.day>
+    <mat-label>Set up date</mat-label>
+    <input [(ngModel)]=date matInput type="date" [value]=data.record.date>
+    
+    <mat-label>{{progress}} {{paymentType |lowercase}}s</mat-label>
+    <div class=plusMinusButtons>
+        <button class=plusButton mat-flat-button (click)=plusProgress()>+</button>
+        <button class=minusButton mat-flat-button (click)=minusProgress()>-</button>
+    </div>
+    <div class=paid>
+        <mat-label>Paid per {{paymentType |lowercase}}.</mat-label><br>
+        <input matInput [(ngModel)]=paid type="number">
+    </div>
+    
+    <br><mat-label>Income: {{income |currency:userCurrency}}</mat-label>
+    <br>
+    <div class=buttons>
+        <button class=returnButton mat-dialog-close mat-flat-button>RETURN</button>
+        <button class=saveButton (click)='saveRecord()' mat-flat-button>SAVE</button>
+    </div>
+
+
+</body>

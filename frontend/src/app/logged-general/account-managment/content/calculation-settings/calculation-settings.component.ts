@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {CURRENCIES, PAYMENT_FOR_GROUP, PAYMENT_RADIOS_GROUP} from 'src/app/reuseable/constants'
+import {CURRENCIES, PAYMENT_FOR_GROUP, PAYMENT_RADIOS_GROUP, Profile} from 'src/app/reuseable/constants'
 import { AppComponent } from 'src/app/app.component';
 
 @Component({
@@ -12,22 +12,33 @@ export class CalculationSettingsComponent implements OnInit {
 
   currencies=CURRENCIES
 
-  user=JSON.parse(localStorage.getItem('User'))[0]
+  user:Profile;
 
-  currentCurrency=this.user.currency;
-  basicSalaryCheckbox=this.user.basic_salary;
+  userCurrency:string;
+  basicSalaryCheckbox:boolean;
+  basicSalaryAmount:number;
   basicSalaryForm='visible';
-  currentCommission=this.user.commission_amount;
-  commissionCalc=this.user.fixed_commission?'percent':'fixed';
+  fixCommission:'percent'|'fixed';
+  commissionAmount:number;
   paymentForGroup=PAYMENT_FOR_GROUP;
-  paymentFor=this.user.payment_for
+  paymentFor:string;
   paymentPeriodGroup=PAYMENT_RADIOS_GROUP;
-  paymentPeriod=this.user.payment_period
+  paymentPeriod:string;
 
 
   constructor() { }
 
   ngOnInit(): void {
+    this.user=JSON.parse(localStorage.getItem('User'))[0];
+    this.userCurrency=this.user.currency;
+    this.basicSalaryCheckbox=this.user.basic_salary;
+    this.basicSalaryAmount=this.user.basic_salary_amount;
+    this.fixCommission=this.user.fix_commission?'percent':'fixed';
+    this.commissionAmount=this.user.commission_amount;
+    this.paymentFor=this.user.payment_for;
+    this.paymentPeriod=this.user.payment_period;
+    
+    
     // this.basicSalaryVisibility();
   }
 

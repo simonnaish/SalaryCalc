@@ -1,0 +1,51 @@
+body {
+    background: #fafafa !important;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    min-height: min-content !important;
+    height: 100%;
+
+    input {
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        width: 10rem;
+        opacity: 0.5;
+    }
+    .plusMinusButtons {
+        display: inline;
+
+        .plusButton {
+            background: #2ecc71 !important;
+        }
+        .minusButton {
+            background: #c0392b !important;
+        }
+    }
+
+    .buttons {
+        margin-top: 1rem;
+        justify-self: center;
+        bottom: 1rem;
+        button {
+            height: 3rem;
+            cursor: pointer;
+        }
+        .returnButton {
+            border-right: solid thin;
+        }
+    }
+}
+
+::ng-deep .mat-dialog-container {
+    margin: 0;
+    padding: 0;
+    min-width: 30vw;
+    min-height: 60vh;
+    overflow: hidden;
+    @media only screen and (max-width: 550px) {
+        min-width: 60vw;
+        min-height: unset !important;
+    }
+}

@@ -14,7 +14,7 @@
 
     <div class=buttons>
         <button class=returnButton (click)=return() mat-flat-button>RETURN</button>
-        <button *ngIf="data.new!=true" mat-flat-button class=deleteButton (click)=deleteRecord()>DELETE</button>
+        <button mat-flat-button class=deleteButton (click)=deleteRecord()>DELETE</button>
         <button class=saveButton (click)='saveRecord()' mat-flat-button>SAVE</button>
     </div>
     <!-- dayInput.value, dateInput.value, incomeInput.value, totalIncomeInput.value, progressInput.value, totalProgressInput.value -->

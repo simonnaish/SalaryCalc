@@ -2,7 +2,7 @@ import { Injectable, LOCALE_ID, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppComponent } from '../../app.component';
 
-import { APIUrl, APIProgressDay } from '../../reuseable/constants'
+import { APIUrl, APIProgressDay} from '../../reuseable/constants'
 import { DatePipe, formatDate } from '@angular/common';
 import { Observable } from 'rxjs';
 
@@ -79,17 +79,24 @@ export class LoggerService {
     this.removeAuthToken();
   }
 
+  modificateAccount(simpleView?:boolean, accountType?:"Free" | "Premium",basicSalary?:boolean, basicSalaryAmount?:number,fixCommission?:boolean,
+  commissionAmount?:number,paymentPeriod?:"Daily"|"Weekly"|"Monthly"|"Yearly", paymentFor?:"Person"|"Lesson"|"Hour", 
+  currency?:"EUR"|"PLN"|"RUB"|"AUD"|"USD", language?:"UK"|"PL"|"ES"|"IT"){
+
+  }
+
+
   fetchData():Observable<any> | Promise<any>{
     let promise=this.http.get(this.crudUrl, this.httpOptions)//.toPromise()
     return promise
   }
 
-  createDay(day: number, date: string | Date, income: number, totalIncome: number, progress: number, totalProgress: number):Promise<APIProgressDay> {
+  createDay(day: number, date: string | Date, income: number, totalIncome: number, progress: number, totalProgress: number):Promise<any> {
     let fdate = formatDate(date, 'yyyy-MM-dd', this.locale);
-    let promise = this.http.post<APIProgressDay>(this.crudUrl, {
+    let promise = this.http.post(this.crudUrl, {
       'day': day, 'date': fdate, 'income': income,
       'total_income': totalIncome, 'progress': progress, 'total_progress': totalProgress
-    }, this.httpOptions).toPromise()
+    }, this.httpOptions).toPromise().then(result=>console.log(result), error=>console.log(error))
     return promise
   }
 

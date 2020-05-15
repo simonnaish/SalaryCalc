@@ -13,11 +13,11 @@
     <div class=statistics>
         <mat-label>Day of work:{{dayOfWork}} </mat-label>
         <br><mat-label>Days to receive salary: {{dayToSalary}}</mat-label>
-        <br><mat-label>Current income:{{incomeInTotal}}</mat-label>
-        <br><mat-label>Income per day: {{incomePerDay}}</mat-label>
-        <br><mat-label>Current progress:{{progressInTotal}}</mat-label>
-        <br><mat-label>Progress per day:{{progressPerDay}}</mat-label>
-        <br><mat-label>Current salary:{{currentSalary}}</mat-label>
+        <br><mat-label>Current income:{{incomeInTotal |currency:userCurrency}}</mat-label>
+        <br><mat-label>Income per day: {{incomePerDay |currency:userCurrency}}</mat-label>
+        <br><mat-label>Current progress:{{progressInTotal |currency:userCurrency}}</mat-label>
+        <br><mat-label>Progress per day:{{progressPerDay |currency:userCurrency}}</mat-label>
+        <br><mat-label>Current salary:{{currentSalary |currency:userCurrency}}</mat-label>
 
     </div>
 </div>

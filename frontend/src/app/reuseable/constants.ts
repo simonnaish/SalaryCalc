@@ -38,8 +38,30 @@ export interface APIProgressDay {
   total_income: number,
 }
 
+
+export interface Profile{
+  id: number,
+  simple_view: boolean,
+  user_id: number,
+  account_type: "Free" | "Premium",
+  date_joined: string|Date,
+  basic_salary: boolean,
+  basic_salary_amount: number,
+  calculate_taxes: boolean,
+  taxes_amount: number,
+  fix_commission: boolean,
+  commission_amount: number,
+  payment_period: "Daily"|"Weekly"|"Monthly"|"Yearly",
+  payment_for: "Person"|"Lesson"|"Hour",
+  currency: "EUR"|"PLN"|"RUB"|"AUD"|"USD",
+  language: "UK"|"PL"|"ES"|"IT",
+  photo: string;
+}
+
+
 //SnackBarMessages
 export const connectionMessage="Ups, something went wrong.\nCheck your internet connection or try again later."
 export const savedTable='Table saved. Check your "downloads" folder.'
 export const unsecureChange=`Be carefull! Remember, that total amounts are calculated automaticly. \n
 If you will change it here, mistake can appear in  the future!`
+export const savedMessage="Changes saved."

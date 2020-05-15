@@ -28,7 +28,8 @@ import { SecuritySettingsComponent } from './logged-general/account-managment/co
 import { ModificateDialogComponent } from './logged-general/progress/modificate-dialog/modificate-dialog.component';
 import { PopUpsComponent } from './reuseable/pop-ups/pop-ups.component';
 import { ConfirmationDialogComponent } from './reuseable/confirmation-dialog/confirmation-dialog.component';
-import {DataResolverService} from 'src/app/reuseable/resolver/data-resolver.service'
+import {DataResolverService} from 'src/app/reuseable/resolver/data-resolver.service';
+import { AddNewComponent } from './logged-general/progress/add-new/add-new.component'
 // import {Res} from '@angular/router'
 
 
@@ -51,6 +52,7 @@ import {DataResolverService} from 'src/app/reuseable/resolver/data-resolver.serv
     ModificateDialogComponent,
     PopUpsComponent,
     ConfirmationDialogComponent,
+    AddNewComponent,
     // DataResolverService
     
     

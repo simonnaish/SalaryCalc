@@ -15,6 +15,7 @@ import { LoggerService } from 'src/app/services/loggerService/logger.service';
 
 import {getWorkDay} from 'src/app/reuseable/helpFunctions'
 import { savedTable, unsecureChange, connectionMessage, ProgressDay } from 'src/app/reuseable/constants';
+import { AddNewComponent } from './add-new/add-new.component';
 // import { DAILY_PROGRESS } from 'src/app/reuseable/constants'
 
 
@@ -62,11 +63,19 @@ export class ProgressComponent implements OnInit {
     let day =getWorkDay(this.user.payment_period);
     let pd = { 'day': day, 'date': this.datePipe.transform(new Date(), 'yyyy-MM-dd'), 'income': 0, 'total_income': 0, 'progress': 0, 'total_progress': 0 };
 
-    const dialogRef=this.dialog.open(ModificateDialogComponent, {
+    const dialogRef=this.dialog.open(AddNewComponent, {
       data: { 'record': pd, 'new': true }
     })
-    dialogRef.afterClosed().subscribe(result=>this.refreshCurrentView());
-   
+    dialogRef.afterClosed().subscribe(result=>{
+    
+      this.refreshCurrentView();
+    },
+    error=>{
+      if (error.date=='progress_day with this date already exists.'){
+        console.log('working!');
+      }
+    }
+    )
   }
 
 

@@ -95,6 +95,7 @@ class progress_day_viewset(viewsets.ModelViewSet):
                 else:
                     total_progress = float(progress) + float(last)
 
+
         _day = progress_day.objects.create(
             id=idx,
             owner=owner,
