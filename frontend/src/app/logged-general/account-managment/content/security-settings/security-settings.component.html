@@ -2,11 +2,11 @@
 
     <h2>Password</h2>
     <div class=passwordForm>
-        <mat-form-field>
             <mat-label>Change your password: </mat-label>
-            <input matInput type="password" placeholder="Type new password.">
-        </mat-form-field>
-
+            <input #oldPasswordInput matInput type='password' placeholder="Type old  password.">
+            <input #newPasswordInput matInput type="password" placeholder="Type new password.">
+            <button mat-flat-button (click)="changePassword(oldPasswordInput.value, newPasswordInput.value)" class=saveButton>Confirm</button>
+      
     </div>
 
     <h2>Data sharing</h2>

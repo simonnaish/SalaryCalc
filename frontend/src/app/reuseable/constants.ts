@@ -65,3 +65,5 @@ export const savedTable='Table saved. Check your "downloads" folder.'
 export const unsecureChange=`Be carefull! Remember, that total amounts are calculated automaticly. \n
 If you will change it here, mistake can appear in  the future!`
 export const savedMessage="Changes saved."
+export const passwordChangeSuccess='Password changed correctly!'
+export const passwordChangeError='Something went wrong! \n Check if your old password is correct or try again later.'

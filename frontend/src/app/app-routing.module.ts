@@ -16,15 +16,18 @@ import { DataResolverService } from './reuseable/resolver/data-resolver.service'
 
 
 const routes: Routes = [
-  { path: '', component: GeneralComponent },
+  {path:'', redirectTo:'general', pathMatch:'full'},
+  { path: 'general', component: GeneralComponent },
   { path: 'logged', component: LoggedGeneralComponent, resolve:{days:DataResolverService} },
   {
     path: 'account', component: AccountManagmentComponent, children: [
+      { path: '', redirectTo:'about', pathMatch:'full'},
       { path: 'about', component: AboutComponent },
       { path: 'accountSettings', component: AccountSettingsComponent },
       { path: 'calculationSettings', component: CalculationSettingsComponent },
       { path: 'generalSettings', component: GeneralSettingsComponent },
-      { path: 'securitySettings', component: SecuritySettingsComponent }
+      { path: 'securitySettings', component: SecuritySettingsComponent },
+      
     ]
   },
   { path: 'statistics', component: StatisticsComponent, resolve:{days:DataResolverService}},

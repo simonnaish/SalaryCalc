@@ -10,16 +10,41 @@ export function code(username: string, message, operation) {
     let counter = 0;
     let converted: number;
 
-    message.array.forEach(letter => {
+    if(operation!='code'){
+        message=message.slice(0, message.length/3)
+    }
+
+    for (let i = 0; i < message.length; i++) {
         counter = checkCounter(counter, secretLength);
         finalTransition = SECRET_TOKEN[counter] + transition;
         if (operation == 'code') {
-            converted = moveForward(charList.indexOf(letter), finalTransition, charListLength)
-        }else{
-            converted=moveBackward(charList.indexOf(letter), finalTransition, charListLength)
+            converted = moveForward(charList.indexOf(message[i]), finalTransition, charListLength)
+        } else {
+            converted = moveBackward(charList.indexOf(message[i]), finalTransition, charListLength)
         }
-        newMessage+=converted;
-    });
+        newMessage += charList[converted];
+    }
+    let extrasSize = message.length * 2;
+    if (operation == 'code') {
+        for (let i = 0; i < extrasSize; i++) {
+            newMessage += charList[Math.floor(Math.random() * 9)]
+        }
+    }
+
+
+
+
+    // message.map(letter => {
+    //     counter = checkCounter(counter, secretLength);
+    //     finalTransition = SECRET_TOKEN[counter] + transition;
+    //     if (operation == 'code') {
+    //         converted = moveForward(charList.indexOf(letter), finalTransition, charListLength)
+    //     }else{
+    //         converted=moveBackward(charList.indexOf(letter), finalTransition, charListLength)
+    //     }
+    //     newMessage+=converted;
+    // });
+    // console.log('newMessage'+newMessage);
     return newMessage;
 }
 

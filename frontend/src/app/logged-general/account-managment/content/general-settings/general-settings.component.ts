@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import {LANGUAGES_SELECT} from 'src/app/reuseable/constants'
+import {LANGUAGES_SELECT, connectionMessage, savedMessage} from 'src/app/reuseable/constants'
 import { AppComponent } from 'src/app/app.component';
+import { LoggerService } from 'src/app/services/loggerService/logger.service';
 
 @Component({
   selector: 'app-general-settings',
@@ -20,7 +21,7 @@ export class GeneralSettingsComponent implements OnInit {
   forgotToUpdate=false;
   newses=true;
 
-  constructor() { }
+  constructor(private logger:LoggerService) { }
 
   ngOnInit(): void {
     console.log(this.languageSelected)
@@ -28,7 +29,12 @@ export class GeneralSettingsComponent implements OnInit {
   }
 
   saveChanges(){
-    AppComponent.showMessage('Changes saved.', 'positive');
+    this.logger.modificateAccount({language:this.languageSelected}).then(result=>{
+      AppComponent.showMessage(savedMessage,'positive')
+    },
+    error=>{
+      AppComponent.showMessage(connectionMessage, 'negative');
+    })
   }
 
   //TODO Push Notifications

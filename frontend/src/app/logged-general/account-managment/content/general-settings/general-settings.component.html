@@ -2,14 +2,14 @@
     <h2>Language</h2>
     <div class=languageForm>
         <mat-label>Change language:</mat-label>
-        <mat-select [(ngModel)]="languageSelected.id">
+        <mat-select [(ngModel)]="languageSelected">
             <mat-option *ngFor="let language of languagesSelect" [value]=language.id>{{language.name}}</mat-option>
         </mat-select>
     </div>
 
     <h2>Reports</h2>
 <div class=reportsForm>
-<mat-form-field>
+<!-- <mat-form-field> -->
     <mat-checkbox [(ngModel)]=salaryTime>Let me know when I can pick up my salary</mat-checkbox>
     <div class=forgotToUpdateDiv>
     <mat-checkbox [(ngModel)]=forgotToUpdate>Email me if I will forget to update my data for longer than</mat-checkbox>
@@ -18,7 +18,7 @@
 
     <mat-checkbox [(ngModel)]=newses>Send me newses from SurfDeveloperStudio!</mat-checkbox>
 
-</mat-form-field>
+<!-- </mat-form-field> -->
 </div>
 
 <div class=buttons>
