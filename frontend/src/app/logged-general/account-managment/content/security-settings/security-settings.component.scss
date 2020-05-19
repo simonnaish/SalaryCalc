@@ -1,4 +1,22 @@
 body {
+    .commingSoon {
+        opacity: 1;
+        color: goldenrod;
+        // transform: skew(-53deg, 26deg);
+        font-size: 5rem;
+        line-height: 6rem;
+        // position: absolute;
+        // top: calc(100vh - 82%);
+        // left: calc(100vw / 2 + 8%);
+
+        // z-index: 2;
+
+        // @media only screen and (max-width: 550px) {
+        //     top: calc(100vh - 57%);
+        //     left: calc(100vw / 5);
+        // }
+    }
+
     overflow-y: auto;
     min-height: 70vh !important;
 
@@ -19,6 +37,13 @@ body {
     }
 
     .passwordForm {
+        .newPasswords {
+            display: flex;
+            flex-direction: column;
+            input{
+                margin:0.5rem;
+            }
+        }
     }
 
     .dataSharing {
@@ -29,6 +54,7 @@ body {
     .friendsAccount {
         margin-right: 2rem;
         display: inline-flex;
+        visibility: hidden;
     }
     .addFriend {
         button {
@@ -38,7 +64,7 @@ body {
     input {
         margin-left: 1rem;
         margin-right: 1rem;
-        border:none !important;
+        border: none !important;
     }
     input::placeholder {
         font-size: 1rem;

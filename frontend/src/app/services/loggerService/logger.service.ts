@@ -21,6 +21,7 @@ export class LoggerService {
   changePasswordUrl = APIUrl + 'change-password/'
   crudUrl = APIUrl + 'progress-day/'
   signUpUrl = APIUrl + 'register/'
+  updateProfileUrl=APIUrl+'update-profile/'
 
 
   httpOptions = {
@@ -101,7 +102,7 @@ export class LoggerService {
     commission_amount?: number, payment_period?: "Daily" | "Weekly" | "Monthly" | "Yearly", payment_for?: "Person" | "Lesson" | "Hour",
     currency?: "EUR" | "PLN" | "RUB" | "AUD" | "USD", language?: "UK" | "PL" | "ES" | "IT"
   }) {
-    let promise = this.http.put(this.signUpUrl, params).toPromise()
+    let promise = this.http.put(this.updateProfileUrl, params, this.httpOptions).toPromise()
     return promise;   
   }
 

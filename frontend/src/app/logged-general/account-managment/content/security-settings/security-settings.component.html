@@ -4,8 +4,11 @@
     <div class=passwordForm>
             <mat-label>Change your password: </mat-label>
             <input #oldPasswordInput matInput type='password' placeholder="Type old  password.">
+            <div class=newPasswords>
             <input #newPasswordInput matInput type="password" placeholder="Type new password.">
-            <button mat-flat-button (click)="changePassword(oldPasswordInput.value, newPasswordInput.value)" class=saveButton>Confirm</button>
+            <input #newPasswordInput2 matInput type="password" placeholder="Type again new password.">
+        </div>
+        <button mat-flat-button (click)="changePassword(oldPasswordInput.value, newPasswordInput.value, newPasswordInput2.value)" class=saveButton>Confirm</button>
       
     </div>
 
@@ -24,7 +27,10 @@
 
     <h2>Friends and employee</h2>
     <h3>Let your friends or employes follow your progress!</h3>
+    <div class=commingSoon>COMMING<br> SOOOOON!</div>
+
     <div class=friendsAccount>
+
         <mat-list>
             <mat-label>This people can already check your statistics.</mat-label>
             <br>

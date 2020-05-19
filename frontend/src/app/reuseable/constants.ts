@@ -67,3 +67,4 @@ If you will change it here, mistake can appear in  the future!`
 export const savedMessage="Changes saved."
 export const passwordChangeSuccess='Password changed correctly!'
 export const passwordChangeError='Something went wrong! \n Check if your old password is correct or try again later.'
+export const wrongPassword='Passwords are not the same. Try typing carefully!'

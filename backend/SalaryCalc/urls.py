@@ -30,6 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-token-auth/', obtain_auth_token_override, name='api_token_auth'),
     path('register/', views.register_user.as_view(), name='register_user'),
-    path('change-password/', views.change_password_view.as_view(), name='change-password')
+    path('change-password/', views.change_password_view.as_view(), name='change-password'),
+    path('update-profile/', views.update_profile, name='update_profile')
 
 ]

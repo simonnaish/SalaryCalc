@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { LoggerService } from 'src/app/services/loggerService/logger.service';
-import { passwordChangeSuccess, passwordChangeError } from 'src/app/reuseable/constants';
+import { passwordChangeSuccess, passwordChangeError, wrongPassword } from 'src/app/reuseable/constants';
 
 @Component({
   selector: 'app-security-settings',
@@ -22,13 +22,17 @@ export class SecuritySettingsComponent implements OnInit {
   }
 
 
-  changePassword(oldPassword:string, newPassword:string){
+  changePassword(oldPassword:string, newPassword:string, newPassword2){
+    if (newPassword==newPassword2){
     this.http.changePassword(oldPassword, newPassword).then(result=>{
       AppComponent.showMessage(passwordChangeSuccess, 'positive')
     },
     error=>{
       AppComponent.showMessage(passwordChangeError, 'negative');
     })
+  }else{
+    AppComponent.showMessage(wrongPassword, 'negative')
+  }
   }
 
   deleteFromFriends(person: any) {

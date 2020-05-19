@@ -54,5 +54,5 @@ def move_backward(start, transition, max_idx):
     return start
 
 
-print(code_message('admin','admin','code'))
-print(code_message('admin','2629383439','decode'))
+# print(code_message('admin','admin','code'))
+# print(code_message('admin','2629383439','decode'))

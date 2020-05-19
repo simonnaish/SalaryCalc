@@ -7,8 +7,12 @@ from rest_framework import viewsets, views, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import ListCreateAPIView, UpdateAPIView
+from rest_framework.decorators import api_view, permission_classes
+
 from .reuseable.my_crypto import code_message
+
 #
+
 from rest_framework.viewsets import ViewSet, ModelViewSet
 
 from .models import user_profile, user as User, progress_day
@@ -27,10 +31,9 @@ from .reuseable.permisions import IsOwnerProfile
 #
 
 
-class register_user(ListCreateAPIView):
+class register_user(ListCreateAPIView):  # check if work with APIView
     queryset = user_profile.objects.all().values()
     serializer_class = user_serializer
-
 
     def perform_create(self, serializer):
         data = self.request.data
@@ -57,23 +60,68 @@ class register_user(ListCreateAPIView):
         return Response(user_profile)
 
 
-#     def put(self, request):
-#         _user_profile=self.request.user;
-#         data=self.request.data
-#         params=['basic_salary','basic_salary_amount','calculate_taxes', 'taxes_amount', 'fix_commission', 'commission_amount', 'payment_period',
-#                 'payment_for', 'currency','language']
+@api_view(["PUT"])
+@permission_classes([IsAuthenticated])
+def update_profile(request):
+    _user_profile = user_profile.objects.filter(user_id=request.user.pk).first()
+    data = request.data
+    params = [
+        "basic_salary",
+        "basic_salary_amount",
+        "calculate_taxes",
+        "taxes_amount",
+        "fix_commission",
+        "commission_amount",
+        "payment_period",
+        "payment_for",
+        "currency",
+        "language",
+    ]
+    for x in params:
+        if x in data:
+            if x == "basic_salary":
+                _user_profile.basic_salary = data["basic_salary"]
+            elif x == "basic_salary_amount":
+                _user_profile.basic_salary_amount = data["basic_salary_amount"]
+            elif x == "calculate_taxes":
+                _user_profile.calculate_taxes = data["calculate_taxes"]
+            elif x == "taxes_amount":
+                _user_profile.taxes_amount = data["taxes_amount"]
+            elif x == "fix_commission":
+                _user_profile.fix_commission = data["fix_commission"]
+            elif x == "commission_amount":
+                _user_profile.commission_amount = data["commission_amount"]
+            elif x == "payment_period":
+                _user_profile.payment_period = data["payment_period"]
+            elif x == "payment_for":
+                _user_profile.payment_for = data["payment_for"]
+            elif x == "currency":
+                _user_profile.currency = data["currency"]
+            elif x == "language":
+                _user_profile.language = data["language"]
+
+    _user_profile.save()
+    return Response("Done!")
+
+    # def put(self, request):
+    #     _user_profile=user_profile.objects.filter(user_id=self.request.user.id).values().first()
+    #     data=self.request.data
+    #     params=['basic_salary','basic_salary_amount','calculate_taxes', 'taxes_amount', 'fix_commission', 'commission_amount', 'payment_period',
+    #             'payment_for', 'currency','language']
+    #
+    #     for x in params:
+    #         if x in data:
+    #             if x=='basic_salary':
+    #                 _user_profile.basic.salary=data[x];
+    #             # _user_profile.x=data[x]
+    #     user_profile.language=data['language'];
+    #
+    #     _user_profile.commit()
+
+    # return Response(_user_profile);
+
+
 #
-#         for x in params:
-#             if x in data:
-#                 if x=='basic_salary':
-#                     _user_profile.basic.salary=data[x];
-#                 # _user_profile.x=data[x]
-#         # user_profile.language=data['language'];
-#
-#         _user_profile.save()
-#
-#         return Response(_user_profile);
-# #
 
 # @csrf_exempt
 class progress_day_viewset(viewsets.ModelViewSet):
@@ -146,11 +194,15 @@ class change_password_view(UpdateAPIView):
 
         if serializer.is_valid():
             # Check old password
-            username=self.request.user.username;
-            coded_old_password=serializer.data.get("old_password");
-            decoded_old_password=code_message(username*3,coded_old_password, 'decode');
-            coded_new_password = serializer.data.get("new_password");
-            decoded_new_password = code_message(username*3, coded_new_password, 'decode');
+            username = self.request.user.username
+            coded_old_password = serializer.data.get("old_password")
+            decoded_old_password = code_message(
+                username * 3, coded_old_password, "decode"
+            )
+            coded_new_password = serializer.data.get("new_password")
+            decoded_new_password = code_message(
+                username * 3, coded_new_password, "decode"
+            )
             print(coded_old_password, coded_new_password)
             print(decoded_old_password, decoded_new_password)
             if not self.object.check_password(decoded_old_password):
