@@ -1,3 +1,5 @@
 venv/
 backend/docker/
 docker/
+.idea/
+.gitignore/
